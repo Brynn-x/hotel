@@ -2,8 +2,8 @@
   <div class="container">
     <div class="nav">
       <div class="left">
-        <div class="logo ">
-          <img src="../.././assets/img/logo.jpg" alt="">
+        <div class="logo">
+          <img src="../.././assets/img/logo.png" alt="">
         </div>
         <div class="main item">首页</div>
         <div class="rank item">酒店排行</div>
@@ -16,7 +16,7 @@
       </div>
       <div class="center"></div>
       <div class="right">
-        <div class="book item">立即预订</div>
+        <div class="book">立即预订</div>
       </div>
     </div>
   </div>
@@ -46,12 +46,14 @@
     color white
     height 40px
     .left,.center,.right,.logo,.item,.search
+      vertical-align top
       display inline-block
     .left
       width 60%
       height 40px
       .logo
-        width 30%
+        width 15%
+        text-align left
         font-size 14px
         height 40px
         line-height 40px
@@ -60,12 +62,13 @@
           height 40px
           vertical-align top
       .item
-        width 10%
+        text-align left
+        width 15%
         font-size 14px
-      .main
-        text-align center
       .search
-        width 30%
+        position relative
+        margin-top 8px
+        width 25%
         font-size 14px
         height 25px
         line-height 25px
@@ -73,6 +76,10 @@
         .el-icon-search
           color #857870
         input
+          position absolute
+          left 20px
+          top 5px
+          background none
           border none
           outline none
           font-size 14px
@@ -82,13 +89,7 @@
       width 20%
     .right
       width 20%
-      vertical-align top
+      text-align right
       .book
-        text-align center
-        margin-top 8px
-        width 80px
-        height 25px
-        line-height 25px
-        background #909399
         font-size 14px
 </style>
