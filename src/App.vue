@@ -1,15 +1,13 @@
 <template>
   <div id="app">
     <my-nav></my-nav>
-    <my-content></my-content>
-    <my-foot></my-foot>
     <router-view/>
+    <my-foot></my-foot>
   </div>
 </template>
 
 <script>
   import myNav from './components/nav/index';
-  import myContent from './components/content/index';
   import myFoot from './components/foot/index';
 export default {
   data() {
@@ -19,7 +17,6 @@ export default {
   },
   components: {
     myNav,
-    myContent,
     myFoot
   }
 }
