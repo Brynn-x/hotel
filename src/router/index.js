@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import myHome from '../pages/home/index.vue'
-import myRank from '../pages/hot/index.vue'
-import myPersonal from '../pages/personal/index.vue'
+import myHotRank from '../pages/hotRank/index.vue'
+import myPersonalCenter from '../pages/personalCenter/index.vue'
 
 Vue.use(Router);
 
@@ -13,12 +13,12 @@ export default new Router({
       component: myHome
     },
     {
-      path: '/rank',
-      component: myRank
+      path: '/hotRank',
+      component: myHotRank
     },
     {
-      path: '/personal',
-      component: myPersonal
+      path: '/personalCenter',
+      component: myPersonalCenter
     }
  ]
 })

@@ -30,9 +30,9 @@
           currentIndex: 0,
           titles:[
             {name:"首页",path:"/"},
-            {name:"热门酒店",path:"/rank"},
+            {name:"热门酒店",path:"/hotRank"},
             {name:"精选优惠",path:""},
-            {name:"个人中心",path:"/personal"}
+            {name:"个人中心",path:"/personalCenter"}
           ],
           arr: [],
         }

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <my-center></my-center>
+    <my-personal-center></my-personal-center>
   </div>
 
 </template>
 
 <script>
-  import myCenter from '../.././components/center/index.vue';
+  import myPersonalCenter from '../../components/personalCenter/index.vue';
     export default {
         name: "index",
       components: {
-          myCenter
+          myPersonalCenter
       }
     }
 </script>

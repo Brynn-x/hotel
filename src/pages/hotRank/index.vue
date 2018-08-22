@@ -1,15 +1,15 @@
 <template>
     <div>
-      <my-rank></my-rank>
+      <my-hot-rank></my-hot-rank>
     </div>
 </template>
 
 <script>
-  import myRank from '../.././components/rank/index';
+  import myHotRank from '../../components/hotRank/index';
     export default {
         name: "hot",
       components: {
-          myRank
+          myHotRank
       }
     }
 </script>

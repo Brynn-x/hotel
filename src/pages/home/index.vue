@@ -1,15 +1,14 @@
 <template>
     <div>
-      <my-content></my-content>
+      <my-home></my-home>
     </div>
 </template>
 
 <script>
-  import myContent from '../../components/content/index';
+  import myHome from '../../components/home/index';
     export default {
-        name: "content",
       components: {
-        myContent,
+        myHome,
       }
     }
 </script>
