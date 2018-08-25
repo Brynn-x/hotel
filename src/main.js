@@ -8,6 +8,10 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import './assets/iconfont/iconfont.css';
 
+import vuex from 'vuex'
+import store from './store'
+Vue.use(vuex);
+
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
@@ -16,7 +20,9 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
+  store,//使用store
   components: { App },
   template: '<App/>',
   render: h => h(App)
 });
+

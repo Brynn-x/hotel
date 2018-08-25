@@ -28,12 +28,6 @@
       data() {
         return{
           currentIndex: 0,
-          titles:[
-            {name:"首页",path:"/"},
-            {name:"热门酒店",path:"/hotRank"},
-            {name:"精选优惠",path:""},
-            {name:"个人中心",path:"/personalCenter"}
-          ],
           arr: [],
         }
       },
@@ -42,7 +36,23 @@
          this.currentIndex = index;
         }
       },
-      computed: {},
+      computed: {
+        titles() {
+          return [
+            {name:"首页",path:"/"},
+            {name:"热门酒店",path:"/hotRank"},
+            {name:"精选优惠",path:""},
+            {name: this.$store.state.loading ? "个人中心" : "登陆/注册" ,path:"/personalCenter"}
+          ]
+        },
+      },
+      created () {
+        if ( localStorage.name  === "123" && localStorage.psd === "123" ) {
+          this.$store.state.loading = true
+        } else {
+          this.$store.state.loading = false
+        }
+      },
       mounted() {
         this.arr = document.getElementsByClassName('item');
         this.arr[0].style.width = "10%";
@@ -138,5 +148,5 @@
         border-radius 5%
       .book:hover
         background #efb153
-        cursor:pointer
+        cursor pointer
 </style>

@@ -8,11 +8,11 @@
       </el-tabs>
 
       <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" v-if="currentIndex === '0'">
-        <el-form-item label="用户名" prop="name2">
+        <el-form-item label="用户名" prop="name">
           <el-input type="name" v-model="ruleForm2.name" auto-complete="on"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="pass">
-          <el-input type="password" v-model="ruleForm2.pass" auto-complete="on">
+          <el-input type="password" v-model="ruleForm2.psd" auto-complete="on">
             <el-button slot="append" icon="el-icon-question" @click="open"></el-button>
           </el-input>
         </el-form-item>
@@ -49,7 +49,6 @@
   export default {
     data() {
       var validatePass1 = (rule, value, callback) => {
-        console.log(value);
         if (!value || value === '') {
           callback(new Error('请输入用户名'));
         } else {
@@ -88,16 +87,16 @@
         dialogVisible: true,
         ruleForm2: {
           name: '',
-          pass: '',
+          psd: '',
           checkPass: '',
           email: '',
           checkPhone: ''
         },
         rules2: {
-          name2:[
+          name:[
             { validator: validatePass1, trigger: 'blur' }
           ],
-          pass: [
+          psd: [
             { validator: validatePass, trigger: 'blur' }
           ],
           checkPass: [
@@ -120,9 +119,21 @@
         this.currentIndex = tab.index + '';
       },
       submitForm(formName) {
+        //存储用户名和密码
+        localStorage.setItem("name",this.ruleForm2.name);
+        localStorage.setItem("psd",this.ruleForm2.psd);
+         if(this.ruleForm2.name == "123" && this.ruleForm2.psd == "123") {
+           this.dialogVisible = false;
+           this.$store.state.loading = true
+         }else if(this.ruleForm2.name != "123" || this.ruleForm2.psd != "123") {
+           localStorage.removeItem("name");
+           localStorage.removeItem("psd");
+           alert("您输入的密码不正确")
+         }
+
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
+           // alert('submit!');
           } else {
             console.log('error submit!!');
             return false;
@@ -136,6 +147,16 @@
         this.$message('忘记密码？请联系管理员');
       }
     },
+    created () {
+      if(localStorage.name === '123' && localStorage.psd === '123') {
+        // 登陆状态不需要弹窗
+        this.dialogVisible = false
+      } else {
+        this.dialogVisible = true
+      }
+      // this.ruleForm2.name = localStorage.name;
+      // this.ruleForm2.psd = localStorage.psd;
+    }
   }
 </script>
 
