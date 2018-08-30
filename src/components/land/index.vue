@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog class="title" :visible.sync="dialogVisible" width="30%">
+    <el-dialog class="title" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
 
       <el-tabs v-model="currentIndex" @tab-click="handleClick">
         <el-tab-pane label="登陆" name="0"></el-tab-pane>
@@ -15,8 +15,7 @@
           <el-input type="password" v-model="ruleForm2.psd" auto-complete="on">
             <el-button slot="append" icon="el-icon-question" @click="open"></el-button>
           </el-input>
-        </el-form-item>
-          <el-button type="primary" @click="submitForm('ruleForm2')">登陆</el-button>
+        </el-form-item> <el-button type="primary" @click="submitForm('ruleForm2')">登陆</el-button>
       </el-form>
 
       <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" v-else>
@@ -24,7 +23,7 @@
           <el-input type="name" v-model="ruleForm2.name" auto-complete="on"></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="pass">
-          <el-input type="password" v-model="ruleForm2.pass" auto-complete="on"></el-input>
+          <el-input type="password" v-model="ruleForm2.psd" auto-complete="on"></el-input>
         </el-form-item>
         <el-form-item label="确认密码" prop="checkPass">
           <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="on"></el-input>
@@ -84,7 +83,6 @@
         }
       };
       return {
-        dialogVisible: true,
         ruleForm2: {
           name: '',
           psd: '',
@@ -114,17 +112,24 @@
       };
     },
     methods: {
+      done(){
+        this.$store.state.bulletBox = false;
+      },
       handleClick(tab) {
         console.log(tab.index);
         this.currentIndex = tab.index + '';
+      },
+      handleClose(done) {
+        done();
       },
       submitForm(formName) {
         //存储用户名和密码
         localStorage.setItem("name",this.ruleForm2.name);
         localStorage.setItem("psd",this.ruleForm2.psd);
          if(this.ruleForm2.name == "123" && this.ruleForm2.psd == "123") {
-           this.dialogVisible = false;
-           this.$store.state.loading = true
+           this.$store.state.bulletBox = false;
+           this.$store.state.loading = true;
+           this.$router.push({path:"/personalCenter"})
          }else if(this.ruleForm2.name != "123" || this.ruleForm2.psd != "123") {
            localStorage.removeItem("name");
            localStorage.removeItem("psd");
@@ -147,15 +152,16 @@
         this.$message('忘记密码？请联系管理员');
       }
     },
+    computed: {
+      dialogVisible(){
+        return this.$store.state.bulletBox
+      }
+    },
     created () {
       if(localStorage.name === '123' && localStorage.psd === '123') {
         // 登陆状态不需要弹窗
-        this.dialogVisible = false
-      } else {
-        this.dialogVisible = true
+        this.$store.state.bulletBox = false;
       }
-      // this.ruleForm2.name = localStorage.name;
-      // this.ruleForm2.psd = localStorage.psd;
     }
   }
 </script>

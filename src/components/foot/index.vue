@@ -9,7 +9,7 @@
         <div>{{item.content3}}</div>
       </div>
       <div class="item">
-        <span>在线预定或电话预订<i class="iconfont icon-phone"></i></span>
+        <span>在线预定或电话预订<i class="iconfont icon-dianhua"></i></span>
         <div class="phone">400 137 1218</div>
       </div>
     </div>
@@ -51,16 +51,16 @@
       display inline-block
       width 25%
       font-size 14px
-      color #6f7180
+      color #606266
     .item div
       margin-top 8px
       font-size 12px
+      color #6f7180
     i
       margin-left 5px
       font-size 20px
     .phone
       font-size 18px !important
-      font-weight bold
 .b-line
     width 100%
     height 25px

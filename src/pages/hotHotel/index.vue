@@ -162,6 +162,7 @@
       methods: {
         change: function (index) {
           this.currentIndex = index;
+          this.currentPage = 1;
         },
         currentChange: function (index) {
             this.currentPage = index;
@@ -177,6 +178,7 @@
 
 <style lang="stylus">
 .container_hot
+  padding-top 50px
   width 100%
   font-size 0
   .rank

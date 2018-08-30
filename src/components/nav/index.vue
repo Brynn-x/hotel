@@ -5,8 +5,8 @@
         <div class="logo">
           <img src="../.././assets/img/logo.png" alt="">
         </div>
-        <div class="item" v-for="(item, index) in titles" :key="index" :class="{active:index === currentIndex}" @click="active(index)">
-          <router-link :class="{active2:index === currentIndex}" :to="item.path">{{item.name}}</router-link>
+        <div class="item" v-for="(item, index) in titles" :key="index" :class="{active:index === currentIndex}" @click="light(index)">
+          <router-link :class="{active2:index === currentIndex}" :to="item.path" :key="index">{{item.name}}</router-link>
         </div>
         <div class="search">
           <div class="search-s">
@@ -17,7 +17,7 @@
       </div>
       <div class="center"></div>
       <div class="right">
-        <button class="book item">立即预定</button>
+        <button class="book item" @click="book">立即预定</button>
       </div>
     </div>
   </div>
@@ -32,16 +32,20 @@
         }
       },
       methods: {
-        active: function (index) {
-         this.currentIndex = index;
+        light: function (index) {
+          this.currentIndex = index;
+        },
+        book: function () {
+          this.$router.push({path:"/hotHotel"});
+          this.currentIndex = 1
         }
       },
       computed: {
         titles() {
           return [
             {name:"首页",path:"/"},
-            {name:"热门酒店",path:"/hotRank"},
-            {name:"精选优惠",path:""},
+            {name:"热门酒店",path:"/hotHotel"},
+            {name:"合作酒店",path:"/cooperateHotel"},
             {name: this.$store.state.loading ? "个人中心" : "登陆/注册" ,path:"/personalCenter"}
           ]
         },
@@ -52,6 +56,7 @@
         } else {
           this.$store.state.loading = false
         }
+        this.$router.push({path:"/"})
       },
       mounted() {
         this.arr = document.getElementsByClassName('item');
@@ -62,6 +67,8 @@
 
 <style lang="stylus" scoped>
 .container
+  position fixed
+  z-index 99999
   width 100%
   font-size 0
   height 50px

@@ -1,16 +1,16 @@
 <template>
   <div id="app">
     <my-nav></my-nav>
-    <!--<router-view/>-->
-    <my-detail></my-detail>
+    <router-view/>
     <my-foot></my-foot>
+    <my-land></my-land>
   </div>
 </template>
 
 <script>
   import myNav from './components/nav/index';
   import myFoot from './components/foot/index';
-  import myDetail from './components/detail/index';
+  import myLand from './components/land/index';
 export default {
   data() {
     return {
@@ -20,8 +20,9 @@ export default {
   components: {
     myNav,
     myFoot,
-    myDetail
-  }
+    myLand
+  },
+
 }
 </script>
 

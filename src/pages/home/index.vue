@@ -89,6 +89,7 @@
 
 <style lang="stylus" scoped>
 .container
+  padding-top 50px
   font-size 0
   .hotels
     margin 0 auto
