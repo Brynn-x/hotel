@@ -31,7 +31,7 @@
     <div class="kinds">
       <div class="content">
         <div class="title">酒店选择</div>
-        <div class="item" v-for="(item, index) in kinds" :key="index" >
+        <div class="item" v-for="(item, index) in kinds" :key="index" @click="jump">
             <el-row>
               <el-card class="introduce" :body-style="{ padding: '0px' }">
                 <img :src="item.url" class="image" height="150px" >
@@ -83,6 +83,11 @@
             {url:"./static/img/k5.jpg",name:"观光型酒店",content:"特点：主要为观光旅游者服务。多建造在旅游点。"},
           ]
         }
+      },
+      methods: {
+        jump: function () {
+          this.$router.push({path:"/hotHotel"})
+        }
       }
     }
 </script>
@@ -93,12 +98,12 @@
   font-size 0
   .hotels
     margin 0 auto
-    max-width 1080px
     text-align center
     width 100%
     height 100%
     line-height 60px
     font-size 16px
+    background #eee
   .pic
     width 100%
     img

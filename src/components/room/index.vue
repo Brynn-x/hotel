@@ -75,6 +75,11 @@
               this.intro[index].bookRoom = "已预定"
             }else if(this.$store.state.loading === false) {
               this.$store.state.bulletBox = true;
+              this.$store.state.foo =  () => {
+              //"我是预定 登陆成功的回调"
+                this.$router.push({path:"/detail"});
+                this.intro[index].bookRoom = "已预定"
+              }
             }
           }
      }

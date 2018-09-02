@@ -36,7 +36,12 @@ import myRoom from '@/components/room/index.vue';
       methods: {
         detail: function () {
           if (this.$store.state.loading === false) {
-            this.$store.state.bulletBox = true;
+              this.$store.state.bulletBox = true;
+              this.$store.state.foo = () => {
+                this.$router.push({path:"/detail"});
+                this.atten = '已关注'
+              }
+
             } else if (this.$store.state.loading === true) {
               this.atten = "已关注"
             }

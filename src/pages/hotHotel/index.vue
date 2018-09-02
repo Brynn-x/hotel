@@ -2,16 +2,18 @@
   <div class="container_hot">
     <div class="rank">
       <div class="hot-hotel">
+        <!--标题-->
         <div class="title">
           <span class="item" :class="{light: index === currentIndex}" @click="change(index)" v-for="(item, index) in title" :key="index">
             {{item}}
-            <i>|</i>
+           <i class="dividingLine iconfont icon-fengexian"></i>
           </span>
         </div>
+        <!--分界线-->
         <div class="line"></div>
-        <template  v-for="(item, index) in list[currentIndex][currentPage-1]">
-          <my-list :item="item" :key="index"></my-list>
-        </template>
+        <!--酒店列表-->
+        <my-list :item="item" v-for="(item, index) in newList" :key="index"></my-list>
+        <!--分页-->
         <el-pagination class="page"
           :page-size="5"
           :current-page="currentPage"
@@ -20,10 +22,12 @@
           :total="20">
         </el-pagination>
       </div>
+      <!--推荐酒店-->
       <div class="search">
         <div class="theme">至尊优享</div>
+        <!--分界线-->
         <div class="line"></div>
-        <my-card></my-card>
+        <!--卡片-->
         <my-card></my-card>
       </div>
     </div>
@@ -38,140 +42,47 @@
       data () {
           return {
             title: ["人气最高","入住率最高","星级最高"],
-            list: [
-              //list第一项
-              [
-                [
-                  {url:"./static/img/l6.jpg",name:"古巷十号艺术酒店",address:"位置：后海、南锣鼓巷地区 天安门、王府井地区",score:"4.5分",value5:4.5,people:"来自1963人点评",assess:"“很好，环境不错，下次再来”",price:"890"},
-                  {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l4.jpg",name:"北京昆仑饭店 ",address:"位置：燕莎、三里屯商业区 朝阳区",score:"4.7分",value5:4.7,people:"来自6395人点评",assess:"”第一次来，服务很周到，门口就是地铁，很方便“",price:"1318" },
-                  {url:"./static/img/l7.jpg",name:"香格里拉饭店",address:"位置：西直门及北京展览馆地区 海淀区",score:"4.6分",value5:4.6,people:" 来自5010人点评",assess:"“花园是酒店，高大上”",price:"1464" },
-                  {url:"./static/img/l1.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l8.jpg",name:"金融街亚朵S吴酒店 ",address:"位置：西单、金融街地区 西城区",score:"4.8分",value5:4.8,people:"来自4890人点评",assess:"“早餐品种少，但还比较精致”",price:"1287" }
-                ],
-                [
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                ],
-                [
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                ],
-                [
-                  {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                    {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                    {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                    {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                    {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                    {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                    {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                  ]
-              ],
-              //list第二项
-               [
-                [
-                  {url:"./static/img/l4.jpg",name:"北京昆仑饭店 ",address:"位置：燕莎、三里屯商业区 朝阳区",score:"4.7分",value5:4.7,people:"来自6395人点评",assess:"”第一次来，服务很周到，门口就是地铁，很方便“",price:"1318" },
-                  {url:"./static/img/l4.jpg",name:"北京昆仑饭店 ",address:"位置：燕莎、三里屯商业区 朝阳区",score:"4.7分",value5:4.7,people:"来自6395人点评",assess:"”第一次来，服务很周到，门口就是地铁，很方便“",price:"1318" },
-                  {url:"./static/img/l4.jpg",name:"北京昆仑饭店 ",address:"位置：燕莎、三里屯商业区 朝阳区",score:"4.7分",value5:4.7,people:"来自6395人点评",assess:"”第一次来，服务很周到，门口就是地铁，很方便“",price:"1318" },
-                  {url:"./static/img/l4.jpg",name:"北京昆仑饭店 ",address:"位置：燕莎、三里屯商业区 朝阳区",score:"4.7分",value5:4.7,people:"来自6395人点评",assess:"”第一次来，服务很周到，门口就是地铁，很方便“",price:"1318" },
-                  {url:"./static/img/l4.jpg",name:"北京昆仑饭店 ",address:"位置：燕莎、三里屯商业区 朝阳区",score:"4.7分",value5:4.7,people:"来自6395人点评",assess:"”第一次来，服务很周到，门口就是地铁，很方便“",price:"1318" },
-                  {url:"./static/img/l4.jpg",name:"北京昆仑饭店 ",address:"位置：燕莎、三里屯商业区 朝阳区",score:"4.7分",value5:4.7,people:"来自6395人点评",assess:"”第一次来，服务很周到，门口就是地铁，很方便“",price:"1318" },
-                  {url:"./static/img/l4.jpg",name:"北京昆仑饭店 ",address:"位置：燕莎、三里屯商业区 朝阳区",score:"4.7分",value5:4.7,people:"来自6395人点评",assess:"”第一次来，服务很周到，门口就是地铁，很方便“",price:"1318" }
-                ],
-                [
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                ],
-                [
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },   {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                ],
-                [
-                   {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                   {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                   {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                   {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                   {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                   {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                   {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                 ],
-              ],
-              //list第三项
-              [
-                [
-                  {url:"./static/img/l6.jpg",name:"北京香格里拉饭店",address:"位置：西直门及北京展览馆地区 海淀区",score:"4.6分",value5:4.6,people:" 来自5010人点评",assess:"“花园是酒店，高大上”",price:"1464" },
-                  {url:"./static/img/l6.jpg",name:"北京香格里拉饭店",address:"位置：西直门及北京展览馆地区 海淀区",score:"4.6分",value5:4.6,people:" 来自5010人点评",assess:"“花园是酒店，高大上”",price:"1464" },
-                  {url:"./static/img/l6.jpg",name:"北京香格里拉饭店",address:"位置：西直门及北京展览馆地区 海淀区",score:"4.6分",value5:4.6,people:" 来自5010人点评",assess:"“花园是酒店，高大上”",price:"1464" },
-                  {url:"./static/img/l6.jpg",name:"北京香格里拉饭店",address:"位置：西直门及北京展览馆地区 海淀区",score:"4.6分",value5:4.6,people:" 来自5010人点评",assess:"“花园是酒店，高大上”",price:"1464" },
-                  {url:"./static/img/l6.jpg",name:"北京香格里拉饭店",address:"位置：西直门及北京展览馆地区 海淀区",score:"4.6分",value5:4.6,people:" 来自5010人点评",assess:"“花园是酒店，高大上”",price:"1464" },
-                  {url:"./static/img/l6.jpg",name:"北京香格里拉饭店",address:"位置：西直门及北京展览馆地区 海淀区",score:"4.6分",value5:4.6,people:" 来自5010人点评",assess:"“花园是酒店，高大上”",price:"1464" },
-                  {url:"./static/img/l6.jpg",name:"北京香格里拉饭店",address:"位置：西直门及北京展览馆地区 海淀区",score:"4.6分",value5:4.6,people:" 来自5010人点评",assess:"“花园是酒店，高大上”",price:"1464" }
-                ],
-                [
-                  {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                  {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                  {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                  {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                  {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                  {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                  {url:"./static/img/l2.jpg",name:"桔子酒店·精选(北京亚运村店) ",address:"位置：亚运村、奥体中心地区 马甸、安贞地区",score:"4.9分",value5:4.9,people:"来自8815人点评",assess:"“干净卫生 房间不错”",price:"541"},
-                ],
-                [
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },   {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                  {url:"./static/img/l7.jpg",name:" 舟客家度假逸墅",address:"位置：密云风景区 密云区",score:"4分",value5:4,people:"来自224人点评",assess:"暂无点评",price:"743" },
-                ],
-                [
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                  {url:"./static/img/l3.jpg",name:"阳光旅店 ",address:"位置：劲松、潘家园地区",score:"4.8分",value5:4.8,people:"来自321人点评",assess:"暂无评论",price:"308" },
-                ]
-              ]
-            ],
             currentIndex: 0,
             currentPage: 1,
+            newList:[],
+            url:""
           }
       },
       methods: {
+          hotelData: function(x,y) {
+          if(x === 0) {
+            this.url = 'http://server.haiyangbg.com/list/hot'
+          }else if(x === 1) {
+            this.url = 'http://server.haiyangbg.com/list/num'
+          }else if(x === 2) {
+            this.url = 'http://server.haiyangbg.com/list/star'
+          }
+          this.axios.get( this.url, {params: {begin: (y - 1) * 7 , count: 7}}).then((res) => {
+            this.newList = res.data;
+          }).catch((res) => {
+            console.log(res);
+          });
+        },
         change: function (index) {
           this.currentIndex = index;
           this.currentPage = 1;
+          this.hotelData(this.currentIndex,this.currentPage)
         },
         currentChange: function (index) {
-            this.currentPage = index;
+          this.currentPage = index;
+          this.hotelData(this.currentIndex,this.currentPage)
         }
-
       },
       components: {
         myList,
         myCard
+      },
+      mounted() {
+        this.axios.get('http://server.haiyangbg.com/list/hot', {params: {begin: 0, count: 7}}).then((res) => {
+          this.newList = res.data;
+        }).catch((res) => {
+          console.log(res);
+        })
       }
     }
 </script>
@@ -196,11 +107,13 @@
         .item
           margin-right 10px
           font-size 16px
-          color #2676e3
-        .light
-          color #ed721e
+          color #0b8bc4
+          .dividingLine
+            color #606266
         .item:hover
-          color #ffb000
+          color #ce8214
+        .light
+          color #ce8214
         .city
           margin-left 30px
         span
@@ -219,12 +132,12 @@
       .theme
         margin-bottom 5px
         font-size 16px
-        color #c75507
+        color #ce8214
       .line
         height 3px
-        background #e6a23c
+        background #ce8214
       .box-card
-        margin-top 20px
+        margin-top 10px
         .el-card__header
           padding 4px 20px
           .head
@@ -233,11 +146,12 @@
             font-size 16px
             .logo
               vertical-align middle
-              width 20%
+              width 30%
+              height 60px
             .title
               display inline-block
               text-align center
-              width 56%
+              width 46%
             .btn
               width 20%
 </style>

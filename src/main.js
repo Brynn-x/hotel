@@ -11,6 +11,11 @@ import './assets/iconfont/iconfont.css';
 import vuex from 'vuex'
 import store from './store'
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios,axios);
+
 Vue.use(vuex);
 
 Vue.use(ElementUI);
@@ -31,13 +36,17 @@ new Vue({
       if (to.path === "/personalCenter") {
         if(this.$store.state.loading === false) {
           this.$store.state.bulletBox = true;
+          this.$store.state.foo = () => {
+          //我是导航栏登陆成功的回调
+            this.$router.push({path:"/personalCenter"})
+          }
         }
         else if (this.$store.state.loading === true) {
-          next()
+          next();
         }
       }
       else{
-        next()
+        next();
       }
     });
     router.afterEach((to,from,next) => {

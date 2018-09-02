@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog class="title" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
+    <el-dialog class="title" :visible="dialogVisible" width="30%" @close="close">
 
       <el-tabs v-model="currentIndex" @tab-click="handleClick">
         <el-tab-pane label="登陆" name="0"></el-tab-pane>
@@ -67,7 +67,7 @@
       var validatePass2 = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请再次输入密码'));
-        } else if (value !== this.ruleForm2.pass) {
+        } else if (value !== this.ruleForm2.psd) {
           callback(new Error('两次输入密码不一致!'));
         } else {
           callback();
@@ -112,16 +112,14 @@
       };
     },
     methods: {
-      done(){
+      close() {
         this.$store.state.bulletBox = false;
       },
       handleClick(tab) {
         console.log(tab.index);
         this.currentIndex = tab.index + '';
       },
-      handleClose(done) {
-        done();
-      },
+
       submitForm(formName) {
         //存储用户名和密码
         localStorage.setItem("name",this.ruleForm2.name);
@@ -129,7 +127,7 @@
          if(this.ruleForm2.name == "123" && this.ruleForm2.psd == "123") {
            this.$store.state.bulletBox = false;
            this.$store.state.loading = true;
-           this.$router.push({path:"/personalCenter"})
+           this.$store.state.foo();
          }else if(this.ruleForm2.name != "123" || this.ruleForm2.psd != "123") {
            localStorage.removeItem("name");
            localStorage.removeItem("psd");

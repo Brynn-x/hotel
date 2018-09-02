@@ -1,5 +1,6 @@
 <template>
-  <div class="list_hot">
+  <!--一个酒店的详情-->
+  <div class="list_hot" @click="detail">
     <div class="left">
       <img class="pic" :src="item.url" alt="">
     </div>
@@ -36,7 +37,14 @@
     export default {
       props: [
         "item"
-      ]
+      ],
+      methods: {
+       detail: function () {
+         this.$router.push({
+           path: "/detail"
+         })
+       }
+      }
     }
 </script>
 
@@ -58,7 +66,9 @@
     vertical-align top
     display inline-block
     .pic
+      width 90%
       display inline-block
+      height 130px
   .center
     width 65%
     display inline-block

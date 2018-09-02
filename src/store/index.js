@@ -8,6 +8,8 @@ export default new vuex.Store({
     // 是否登陆
     loading: false,
     //弹窗是否出现
-    bulletBox: false
+    bulletBox: false,
+    //回调函数
+    foo: function () {},
   }
 })

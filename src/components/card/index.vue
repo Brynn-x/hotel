@@ -4,10 +4,20 @@
         <div slot="header" class="head clearfix">
           <img class="logo" src="../.././assets/img/cardlogo.jpg" alt="">
           <span class="title">洲际酒店集团</span>
-          <el-button class="btn" size="mini" type="primary">进入</el-button>
+          <el-button class="btn" size="mini" type="primary" @click="detail">进入</el-button>
         </div>
         <div class="text item">
           <img src="../../assets/img/card.jpg" alt="">
+        </div>
+      </el-card>
+      <el-card class="box-card">
+        <div slot="header" class="head clearfix">
+          <img class="logo" src="../../assets/img/cardlogo2.png" alt="">
+          <span class="title">丽思·卡尔顿</span>
+          <el-button class="btn" size="mini" type="primary" @click="detail">进入</el-button>
+        </div>
+        <div class="text item">
+          <img src="../../assets/img/card2.jpg" alt="">
         </div>
       </el-card>
     </div>
@@ -15,7 +25,11 @@
 
 <script>
     export default {
-        name: "index",
+        methods: {
+          detail: function () {
+            this.$router.push({path:"/detail"})
+          }
+        }
     }
 </script>
 
@@ -30,11 +44,12 @@
       font-size 16px
       .logo
         vertical-align middle
-        width 20%
+        width 10%
+        height 50px
       .title
         display inline-block
         text-align center
-        width 56%
+        width 65%
       .btn
         width 20%
 

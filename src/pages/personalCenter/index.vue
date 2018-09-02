@@ -5,10 +5,10 @@
           <div class="background"></div>
           <div class="info">
             <div class="avatar">
-              <img class="avatarImg" src="../../assets/img/avatar.jpg" alt="">
+              <img class="avatarImg" src="../.././assets/img/avatar.jpg" alt="">
             </div>
             <div class="name">
-              <h3>夏天的风</h3>
+              <h3>柑橘与柠檬啊</h3>
               <div class="Signature">暂无个人资料</div>
             </div>
             <div class="edit">
@@ -24,7 +24,7 @@
               <div class="item" v-for="(item, index) in myAtten" :key="index">
                 <el-col :span="22">
                   <el-card shadow="hover">
-                    <i class="iconfont icon-love icon"></i>{{item.name}}
+                    <i class="iconfont icon-weibiaoti- icon"></i>{{item.name}}
                     <span class="smallWord">{{item.state}}</span>
                   </el-card>
                 </el-col>
@@ -35,7 +35,7 @@
               <div class="item" v-for="(item, index) in forAtten" :key="index">
                 <el-col :span="22">
                   <el-card shadow="hover">
-                    <i class="iconfont icon-love icon"></i>{{item.name}}
+                    <i class="iconfont icon-weibiaoti- icon"></i>{{item.name}}
                     <span class="smallWord">{{item.state}}</span>
                   </el-card>
                 </el-col>
