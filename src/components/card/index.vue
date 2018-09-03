@@ -35,7 +35,7 @@
 
 <style lang="stylus">
 .box-card
-  margin-top 20px
+  margin-bottom 15px
   .el-card__header
     padding 4px 20px
     .head

@@ -107,22 +107,22 @@
         .item
           margin-right 10px
           font-size 16px
-          color #0b8bc4
+          color #00a7f2
           .dividingLine
             color #606266
         .item:hover
-          color #ce8214
+          color #ff6800
         .light
-          color #ce8214
+          color #ff6800
         .city
           margin-left 30px
         span
           margin-right 30px
           font-size 12px
       .line
-        margin-bottom 10px
+        margin-bottom 15px
         height 3px
-        background #66b1ff
+        background #00a7f2
       .page
         text-align center
     .search
@@ -132,12 +132,12 @@
       .theme
         margin-bottom 5px
         font-size 16px
-        color #ce8214
+        color #ff6800
       .line
         height 3px
-        background #ce8214
+        background #ff6800
       .box-card
-        margin-top 10px
+        margin-top 15px
         .el-card__header
           padding 4px 20px
           .head

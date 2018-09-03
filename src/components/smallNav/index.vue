@@ -1,6 +1,6 @@
 <template>
   <div class="toolbar_s">
-    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+    <el-menu  :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
       <el-menu-item index="1">我的预订</el-menu-item>
       <el-menu-item index="2">我的收藏</el-menu-item>
       <el-menu-item index="3">我的会员</el-menu-item>
@@ -11,8 +11,8 @@
         <el-col :span="16" >
           <el-card :body-style="{ padding: '0px' }">
             <img src="../.././assets/img/myBook.jpg" class="image">
-            <div style="padding: 14px;">
-              <span style="font-size: 18px">复式房</span>
+            <div class="intro">
+              <span class="room">复式房</span>
               <div class="bottom ">
                 <time class="time">入住时间：<span style="color:#ff7f27">2018.10.1-2018.10.5</span></time>
               </div>
@@ -119,8 +119,12 @@
         text-align center
         font-size 16px
         .image
-          width 500px
-          height 300px
+          width 100%
+          height 100%
+        .intro
+          padding 14px
+          .room
+            font-size 18px
         .el-col:hover
           box-shadow 0 0 1px 1px #eee
     .myCollect
@@ -163,4 +167,61 @@
         color #66b1ff
       .date
         color #8c939d
+  @media screen and (max-width:798px) {
+    .toolbar_s .myBook .item .intro{
+      padding 5px
+    }
+  }
+  @media screen and (max-width:760px) {
+    .container_s .content .toolbar_s {
+     width 67%
+    }
+  }
+  @media screen and (max-width:690px){
+    .toolbar_s .myBook .item .intro{
+      font-size 14px
+    }
+    .toolbar_s .myBook .item .intro .room {
+      font-size 16px
+    }
+    .el-menu-item{
+         padding 0 16px
+      }
+  }
+  @media screen and (max-width:596px){
+   .el-menu-item{
+        padding 0  12px
+    }
+  }
+  @media screen and (max-width:561px){
+     .container_s .content .toolbar_s {
+       width 100%
+       height 450px
+     }
+  }
+ @media screen and (max-width:430px){
+    .container_s .content .toolbar_s {
+      height 350px
+    }
+   .toolbar_s .myBook .item .intro .room {
+     font-size: 14px
+   }
+   .toolbar_s .myBook .item .intro {
+     font-size 12px
+   }
+ }
+  @media screen and (max-width:350px){
+    .container_s .content .toolbar_s {
+      height 280px
+    }
+ .toolbar_s .myBook .item .intro .room{
+    font-size 12px
+  }
+  .toolbar_s .myBook .item .intro {
+    font-size 10px
+  }
+  .toolbar_s .myBook .item .intro {
+     padding 0
+   }
+}
 </style>
