@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container_f">
     <div class="t-line"></div>
     <div class="foot">
       <div class="item" v-for="(item, index) in messages" :key="index">
@@ -33,8 +33,8 @@
     }
 </script>
 
-<style lang="stylus" scoped>
-.container
+<style lang="stylus">
+.container_f
   width 100%
   font-size 0
   .t-line
@@ -43,13 +43,14 @@
     background #b69e4f
   .foot
     max-width 1080px
+    padding 0 4%
     margin 0 auto
     height 180px
     .item
       vertical-align top
       margin-top 10px
       display inline-block
-      width 25%
+      width 23%
       font-size 14px
       color #606266
     .item div
@@ -65,4 +66,28 @@
     width 100%
     height 25px
     background #232530
+  @media screen and (max-width:1000px){
+    .container_f .foot{
+      height 160px
+    }
+  }
+@media screen and (max-width:750px){
+  .container_f .foot{
+    height 140px
+  }
+}
+@media screen and (max-width:570px){
+  .container_f .foot{
+    height 110px
+  }
+  .container_f .foot .item{
+    font-size 12px
+  }
+  .container_f .foot .item div{
+    font-size 10px
+  }
+  .container_f .foot .phone {
+    font-size: 15px !important;
+  }
+}
 </style>

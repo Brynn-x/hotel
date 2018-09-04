@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
+  <div class="container_p">
     <div class="nav">
+      <!--左侧-->
       <div class="left">
         <div class="logo">
           <img src="../.././assets/img/logo.png" alt="">
@@ -15,7 +16,9 @@
           </div>
         </div>
       </div>
+      <!--中间-->
       <div class="center"></div>
+      <!--右侧-->
       <div class="right">
         <button class="book item" @click="book">立即预定</button>
       </div>
@@ -59,14 +62,12 @@
         this.$router.push({path:"/"})
       },
       mounted() {
-        this.arr = document.getElementsByClassName('item');
-        this.arr[0].style.width = "10%";
       }
     }
 </script>
 
-<style lang="stylus" scoped>
-.container
+<style lang="stylus">
+.container_p
   position fixed
   z-index 99999
   width 100%
@@ -87,12 +88,12 @@
       width 60%
       .logo
         text-align center
-        width 15%
+        width 10%
         font-size 14px
         img
           margin-top 4px
-          width 45%
-          height 80%
+          width 40px
+          height 40px
       .item
         text-align center
         width 15%
@@ -109,8 +110,6 @@
         background #545c64
         .active2
           color #ffd04b
-      .main
-        width 10%
       .search
         width 30%
         text-align center
@@ -138,15 +137,15 @@
           input:focus::-webkit-input-placeholder
             color transparent
     .center
-      width 20%
+      width 30%
     .right
-      width 20%
-      text-align right
+      width 10%
+      text-align center
       .book
-        margin-top 12px
+        margin-top 12%
         border 0
         outline none
-        width 90px
+        width 80px
         height 25px
         line-height 25px
         font-size 12px
@@ -156,4 +155,99 @@
       .book:hover
         background #efb153
         cursor pointer
+@media screen and (max-width:1000px){
+  .container_p .nav .left{
+    width 60%
+  }
+  .container_p .nav .center{
+    width 28%
+  }
+  .container_p .nav .right{
+    width 12%
+  }
+}
+@media screen and (max-width:800px){
+  .container_p .nav .left{
+      width 70%
+    }
+  .container_p .nav .center{
+    width 15%
+  }
+  .container_p .nav .right{
+    width 15%
+  }
+}
+@media screen and (max-width:700px){
+  .container_p .nav .left{
+    width 80%
+  }
+  .container_p .nav .center{
+    width 2%
+  }
+  .container_p .nav .right{
+    width 18%
+  }
+}
+@media screen and (max-width:550px){
+  .container_p .nav .left{
+    width 80%
+  }
+  .container_p .nav .left .logo{
+    width 16%
+  }
+  .container_p .nav .left .item{
+    width 21%
+  }
+  .container_p .nav .left .search{
+    width 0
+  }
+  .container_p .nav .left .search .search-s i {
+    font-size 0
+  }
+  .container_p .nav .center{
+    width 0
+  }
+  .container_p .nav .right{
+    width 20%
+  }
+  .container_p .nav .right .book{
+    width 70%
+  }
+}
+@media screen and (max-width:400px){
+  .container_p .nav .left .item {
+    font-size 12px
+  }
+  .container_p .nav .right .book{
+   margin-top 17%
+  }
+}
+@media screen and (max-width:360px){
+  .container_p .nav .left{
+    width 80%
+  }
+  .container_p .nav .right{
+    width 20%
+  }
+  .container_p .nav .left .item {
+    font-size 10px
+  }
+  .container_p .nav .right .book{
+    width 80%
+  }
+}
+@media screen and (max-width:316px){
+  .container_p .nav .left{
+    width 81%
+  }
+  .container_p .nav .right{
+    width 19%
+  }
+  .container_p .nav .right .book{
+    width 90%
+  }
+}
+
+
+
 </style>
