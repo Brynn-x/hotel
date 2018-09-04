@@ -95,7 +95,7 @@
       margin-bottom 10px
       border-radius 5px
       background-image url("../../assets/img/back2.jpg")
-      background-size 100% 350px
+      background-size 100% 100%
       background-repeat no-repeat
       .background
         height 65%
@@ -193,6 +193,7 @@
           .smallWord
             color darkorange
         .forAttention
+          padding 20% 0
           height 60%
           .icon
             color black
@@ -203,19 +204,18 @@
     height 320px
   }
   .container_s .content{
-     height 1120px
+    height 1100px
   }
-  .container_s .content .detail .history{
-    padding 0 48px
+  .container_s .content .detail .history {
+    height 730px
   }
 }
-
 @media screen and (max-width: 1062px) {
   .container_s .content .personalInfo{
     height 290px
   }
   .container_s .content{
-    height 1090px
+    height 1070px
   }
   .container_s .content .detail .history {
     padding 0 35px
@@ -226,14 +226,29 @@
   .container_s .content .detail .history {
     padding 0 25px
   }
+  .container_s .content{
+    height 1020px
+  }
+  .container_s .content .detail{
+    height 680px
+  }
+  .container_s .content .detail .history{
+    height 680px
+  }
 }
 
 @media screen and (max-width: 909px) {
+  .container_s .content{
+    height 940px
+  }
+  .container_s .content .detail{
+    height 630px
+  }
+  .container_s .content .detail .history{
+    height 630px
+  }
   .container_s .content .personalInfo{
     height 260px
-  }
-  .container_s .content{
-    height 1060px
   }
   .container_s .content .personalInfo .info .name h3 {
     font-size 24px
@@ -251,11 +266,11 @@
   }
 }
 @media screen and (max-width: 834px) {
+  .container_s .content{
+    height 930px
+  }
   .container_s .content .personalInfo{
     height 250px
-  }
-  .container_s .content{
-    height 1050px
   }
   .container_s .content .detail .history {
     padding 0 5px
@@ -268,6 +283,9 @@
   }
 }
 @media screen and (max-width:760px) {
+  .container_s .content{
+    height 920px
+  }
   .container_s .content .personalInfo .info .name h3 {
     font-size 23px
   }
@@ -287,11 +305,11 @@
   }
 }
 @media screen and (max-width:690px) {
+  .container_s .content{
+    height 880px
+  }
   .container_s .content .personalInfo{
     height 220px
-  }
-  .container_s .content{
-    height 1020px
   }
   .container_s .content .personalInfo .info .avatar .avatarImg{
     top -47px
@@ -311,11 +329,11 @@
   }
 }
 @media screen and (max-width:648px) {
+  .container_s .content{
+    height 860px
+  }
   .container_s .content .personalInfo{
     height 200px
-  }
-  .container_s .content{
-    height 1000px
   }
   .container_s .content .detail .history .myAttention .item .el-col .el-card .el-card__body .hotelName{
     font-size 12px
@@ -329,11 +347,11 @@
   }
 }
 @media screen and (max-width:561px){
+  .container_s .content{
+    height 740px
+  }
   .container_s .content .personalInfo{
     height 180px
-  }
-  .container_s .content{
-    height 680px
   }
   .container_s .content .personalInfo .info .avatar .avatarImg{
     left 16px
@@ -354,6 +372,9 @@
   }
 }
 @media screen and (max-width:500px){
+  .container_s .content{
+    height 680px
+  }
   .container_s .content .personalInfo{
     height 160px
   }
@@ -369,11 +390,17 @@
   }
 }
 @media screen and (max-width:430px){
-  .container_s .content {
-    height 500px
+  .container_s .content{
+    height 600px
+  }
+  .el-button--medium {
+    font-size 9px
   }
 }
 @media screen and (max-width:400px){
+  .container_s .content{
+    height 570px
+  }
   .container_s .content .personalInfo{
     height 130px
   }
@@ -383,10 +410,14 @@
   .el-menu-item {
     font-size 12px
   }
+  .el-button--medium {
+    padding 2px 2px
+    font-size 8px
+  }
 }
 @media screen and (max-width:350px){
-  .container_s .content {
-    height 430px
+  .container_s .content{
+    height 510px
   }
   .container_s .content .personalInfo{
     height 110px
@@ -403,6 +434,24 @@
     font-size 11px
     padding 0 8px
   }
-
+  .el-button--medium {
+    font-size 7px
+  }
+}
+@media screen and (max-width:290px){
+  .container_s .content{
+    height 440px
+  }
+  .container_s .content .personalInfo{
+    height 90px
+  }
+  .container_s .content .personalInfo .info .avatar .avatarImg{
+    top -22px
+    left 8px
+  }
+  .el-button--medium {
+    padding 1px 1px
+    font-size 6px
+  }
 }
 </style>

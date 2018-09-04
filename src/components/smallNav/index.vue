@@ -113,11 +113,13 @@
     height 750px
     background white
     .myBook
-      padding 50px
+      padding 10% 8%
       font-size 16px
       .item
         text-align center
         font-size 16px
+        .el-col-16
+          width 99.66667%
         .image
           width 100%
           height 100%
@@ -167,6 +169,21 @@
         color #66b1ff
       .date
         color #8c939d
+  @media screen and (max-width:1137px)  {
+     .container_s .content .toolbar_s {
+       height 730px
+     }
+  }
+   @media screen and (max-width:986px) {
+     .container_s .content .toolbar_s {
+       height 680px
+     }
+   }
+     @media screen and (max-width: 909px) {
+       .container_s .content .toolbar_s {
+         height 630px
+       }
+     }
   @media screen and (max-width:798px) {
     .toolbar_s .myBook .item .intro{
       padding 5px
@@ -196,12 +213,17 @@
   @media screen and (max-width:561px){
      .container_s .content .toolbar_s {
        width 100%
-       height 450px
+       height 540px
      }
   }
+    @media screen and (max-width:500px){
+        .container_s .content .toolbar_s {
+          height 500px
+        }
+    }
  @media screen and (max-width:430px){
     .container_s .content .toolbar_s {
-      height 350px
+      height 420px
     }
    .toolbar_s .myBook .item .intro .room {
      font-size: 14px
@@ -212,7 +234,7 @@
  }
   @media screen and (max-width:350px){
     .container_s .content .toolbar_s {
-      height 280px
+      height 380px
     }
  .toolbar_s .myBook .item .intro .room{
     font-size 12px
@@ -224,4 +246,9 @@
      padding 0
    }
 }
+  @media screen and (max-width:290px){
+      .container_s .content .toolbar_s {
+        height 330px
+      }
+  }
 </style>
