@@ -22,25 +22,20 @@
       </el-row>
     </div>
     <div class="myCollect" v-if="('2' === currentIndex)">
-      <div class="itemFirst" v-for="(item, index) in collectFirst" :key="item.id">
-        <div class="title">{{item.title}}</div>
+      <div class="item" v-for="(item, index) in collect" :key="item.id">
+        <div class="name">{{item.title}}</div>
         <img  class="image" :src="item.src" alt="">
-        <div class="decorate">{{item.name}}</div>
-      </div>
-      <div class="itemSecond" v-for="(item, index) in collectSecond" :key="item.id">
-        <div class="title">{{item.title}}</div>
-        <img  class="image" :src="item.src" alt="">
-        <div class="decorate">{{item.name}}</div>
+        <div class="decorate">{{item.logo}}</div>
       </div>
     </div>
     <div class="myVip" v-if="('3' === currentIndex)">
-      <template>
-        <el-table :data="tableData" border style="width: 100%">
-          <el-table-column prop="name" label="酒店名称" width="180"></el-table-column>
-          <el-table-column prop="rank" label="会员等级" width="180"></el-table-column>
-          <el-table-column prop="dist" label="会员折扣" ></el-table-column>
-        </el-table>
-      </template>
+        <template>
+          <el-table :data="tableData" border style="width: 100%">
+            <el-table-column prop="name" label="酒店名称" ></el-table-column>
+            <el-table-column prop="rank" label="会员等级"></el-table-column>
+            <el-table-column prop="dist" label="会员折扣" ></el-table-column>
+          </el-table>
+        </template>
     </div>
     <div class="myHistory" v-if="('4' === currentIndex)" >
       <el-collapse v-model="activeName" accordion>
@@ -61,14 +56,10 @@
            activeName: '1',
            show: false,
            currentIndex: '1',
-           collectFirst:[
-             {id:"1",title:"Marriott：豪华大床房",src:"../.././static/img/collect.jpg",name:"Marriott"},
-             {id:"2",title:"Hilton：观景房",src:"../.././static/img/collect1.jpg",name:"Hilton"}
-           ],
-           collectSecond:[
-             {id:"3",title:"悦榕庄：主题单人房",src:"../.././static/img/collect2.jpg",name:"悦榕庄"},
-             {id:"4",title:"文华东方：豪华家庭房",src:"../.././static/img/collect3.jpg",name:"文华东方"}
-           ],
+           collect:[
+              {id:"1",title:"Marriott：豪华大床房",src:"../.././static/img/collect.jpg",logo:"Marriott"},
+              {id:"3",title:"悦榕庄：主题单人房",src:"../.././static/img/collect2.jpg",logo:"悦榕庄"},
+              ],
            tableData: [{
              name: '文华东方',
              rank: '白金会员',
@@ -130,71 +121,96 @@
         .el-col:hover
           box-shadow 0 0 1px 1px #eee
     .myCollect
-      margin 50px
-      .itemFirst
-        margin 0 15% 5% 0
-      .itemSecond
-        margin 5% 0 10% 15%
-      .itemFirst,.itemSecond
+      height 750px
+      padding 7% 20%
+      .item
         position relative
-        display inline-block
-        width 35%
-        height 180px
-        .title
-          width 100%
-          height 20%
-          font-size 16px
+        text-align center
+        margin-bottom 20%
+        width 100%
+        height 30%
+        border-radius 5px
+        .name
+          font-size 18px
+          margin-bottom 2%
         .image
           width 100%
-          height 80%
-        &:hover
-          transform scale(1.1,1.1)
-          transition 1s
+          height 100%
+          border-radius 5px
         .decorate
           position absolute
-          left 10%
-          top 30%
-          width 80%
-          height 60%
+          padding 1% 3%
+          bottom 0
+          right 5%
+          letter-spacing 2px
           font-size 16px
-          color #fab6b6
-          border 1px solid white
+          color white
+          border-top 1px solid white
+          border-bottom 1px solid white
     .myVip
-      padding 50px
+      padding 7% 10%
+      .name
+        width 180px
+      .rank
+        width 180px
       .has-gutter
         color #606266
     .myHistory
-      padding 50px
+      padding 5%
       .name
         color #66b1ff
       .date
         color #8c939d
-  @media screen and (max-width:1137px)  {
+@media screen and (max-width:1137px)  {
      .container_s .content .toolbar_s {
        height 730px
      }
   }
-   @media screen and (max-width:986px) {
-     .container_s .content .toolbar_s {
+ @media screen and (max-width:986px) {
+   .toolbar_s .myVip.name{
+     width 170px
+   }
+   .toolbar_s .myCollect .item {
+     height 25%
+   }
+  .container_s .content .toolbar_s {
        height 680px
      }
    }
-     @media screen and (max-width: 909px) {
-       .container_s .content .toolbar_s {
-         height 630px
-       }
-     }
-  @media screen and (max-width:798px) {
+@media screen and (max-width: 909px) {
+  .toolbar_s .myCollect .item {
+    height 22%
+  }
+   .container_s .content .toolbar_s {
+     height 630px
+   }
+}
+@media screen and (max-width:798px) {
+  .toolbar_s .myCollect .item {
+    height 20%
+  }
     .toolbar_s .myBook .item .intro{
       padding 5px
     }
   }
-  @media screen and (max-width:760px) {
+@media screen and (max-width:760px) {
+  .toolbar_s .myCollect .item {
+    height 18%
+  }
+  .toolbar_s .myCollect .item .name{
+    font-size 16px
+  }
+  .toolbar_s .myCollect .item .decorate{
+    font-size 14px
+  }
     .container_s .content .toolbar_s {
      width 67%
     }
   }
-  @media screen and (max-width:690px){
+@media screen and (max-width:690px){
+    .toolbar_s .myCollect .item {
+      height 15%
+    }
     .toolbar_s .myBook .item .intro{
       font-size 14px
     }
@@ -202,26 +218,53 @@
       font-size 16px
     }
     .el-menu-item{
-         padding 0 16px
-      }
+       padding 0 16px
+    }
   }
-  @media screen and (max-width:596px){
+@media screen and (max-width:596px){
    .el-menu-item{
-        padding 0  12px
+      padding 0  12px
     }
   }
-  @media screen and (max-width:561px){
-     .container_s .content .toolbar_s {
-       width 100%
-       height 540px
-     }
+@media screen and (max-width:561px){
+  .toolbar_s .myCollect .item {
+    height 20%
   }
-    @media screen and (max-width:500px){
-        .container_s .content .toolbar_s {
-          height 500px
-        }
+   .container_s .content .toolbar_s {
+     width 100%
+     height 540px
+   }
+  }
+  @media screen and (max-width:500px){
+    .el-table.el-table--fit.el-table--border.el-table--enable-row-hover.el-table--enable-row-transition{
+      font-size 12px
     }
+    .toolbar_s .myCollect .item {
+      height 16%
+    }
+    .container_s .content .toolbar_s {
+      height 500px
+    }
+  }
  @media screen and (max-width:430px){
+   .el-collapse-item__header{
+     font-size 12px
+   }
+   .toolbar_s .myHistory .name{
+     font-size 12px
+   }
+   .el-collapse-item__content{
+     font-size 12px
+   }
+   .toolbar_s .myCollect .item .name{
+     font-size 12px
+   }
+   .toolbar_s .myCollect .item .decorate{
+     font-size 12px
+   }
+   .toolbar_s .myCollect .item {
+     height 13%
+   }
     .container_s .content .toolbar_s {
       height 420px
     }
@@ -232,23 +275,53 @@
      font-size 12px
    }
  }
-  @media screen and (max-width:350px){
-    .container_s .content .toolbar_s {
-      height 380px
-    }
- .toolbar_s .myBook .item .intro .room{
+@media screen and (max-width:350px){
+  .el-collapse-item__header{
+    font-size 10px
+  }
+  .toolbar_s .myHistory .name{
+    font-size 10px
+  }
+  .el-collapse-item__content{
+    font-size 10px
+  }
+  .toolbar_s .myVip {
+    padding: 7% 1%
+  }
+  .el-table--enable-row-transition .el-table__body td{
+    padding 0
+  }
+  .el-table.el-table--fit.el-table--border.el-table--enable-row-hover.el-table--enable-row-transition{
+    font-size 10px
+  }
+  .toolbar_s .myCollect .item .name{
+    font-size 12px
+  }
+  .toolbar_s .myCollect .item .decorate{
+    font-size 10px
+  }
+  .toolbar_s .myCollect .item {
+    height 10%
+  }
+  .container_s .content .toolbar_s {
+    height 380px
+  }
+  .toolbar_s .myBook .item .intro .room{
     font-size 12px
   }
   .toolbar_s .myBook .item .intro {
-    font-size 10px
+   font-size 10px
   }
   .toolbar_s .myBook .item .intro {
      padding 0
-   }
-}
-  @media screen and (max-width:290px){
-      .container_s .content .toolbar_s {
-        height 330px
-      }
   }
+}
+@media screen and (max-width:290px){
+  .toolbar_s .myCollect .item {
+    height 8%
+  }
+  .container_s .content .toolbar_s {
+    height 330px
+  }
+}
 </style>

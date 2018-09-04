@@ -1,6 +1,7 @@
 <template>
     <div class="container_s">
       <div class="content">
+        <!--背景区-->
         <div class="personalInfo">
           <div class="background"></div>
           <div class="info">
@@ -236,7 +237,6 @@
     height 680px
   }
 }
-
 @media screen and (max-width: 909px) {
   .container_s .content{
     height 940px
@@ -275,7 +275,6 @@
   .container_s .content .detail .history {
     padding 0 5px
   }
-
 }
 @media screen and (max-width:798px) {
   .container_s .content .detail .history {
@@ -368,6 +367,7 @@
   }
   .container_s .content .detail .history {
     width 0
+    height 0
     overflow hidden
   }
 }
