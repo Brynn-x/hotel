@@ -1,15 +1,18 @@
 <template>
-  <div class="container">
+  <div class="container_h">
+   <!--标语-->
     <div class="hotels">Hotels.更多目的地,更多精彩体验,更多您想要的。</div>
+    <!--轮播图-->
     <div class="pic">
       <template>
-        <el-carousel indicator-position="inside" height="600px">
+        <el-carousel indicator-position="none" height="600px">
           <el-carousel-item v-for="(item, index) in pics" :key="index">
             <img :src="item" alt="">
           </el-carousel-item>
         </el-carousel>
       </template>
     </div>
+    <!--优势-->
     <div class="advantages">
       <div class="content">
         <div class="title">平台优势</div>
@@ -19,6 +22,7 @@
         </div>
       </div>
     </div>
+    <!--步骤-->
     <div class="steps">
       <div class="content">
         <div class="title">预定步骤</div>
@@ -28,17 +32,18 @@
         </div>
       </div>
     </div>
+    <!--种类-->
     <div class="kinds">
       <div class="content">
         <div class="title">酒店选择</div>
         <div class="item" v-for="(item, index) in kinds" :key="index" @click="jump">
             <el-row>
               <el-card class="introduce" :body-style="{ padding: '0px' }">
-                <img :src="item.url" class="image" height="150px" >
-                <div style="padding:5px 10px 10px 10px;text-align: center">
-                  <span style="font-weight: 600;letter-spacing:5px;">{{item.name}}</span>
-                  <div class="bottom clearfix;" style="padding-top: 5px;text-align: left">
-                    <time class="time" style="font-size: 14px;">{{item.content}}</time>
+                <img :src="item.url" class="image">
+                <div class="name">
+                  <span class="nameDetail">{{item.name}}</span>
+                  <div class="bottom clearfix; intro" >
+                    <time class="time">{{item.content}}</time>
                   </div>
                 </div>
               </el-card>
@@ -64,15 +69,15 @@
             "./static/img/s7.jpg",
           ],
           advantages:[
-            {url:"./static/img/a1.png",name:"个性化定制",intro:"联系客服，告诉我们您的需求，为您提供个性化定制"},
+            {url:"./static/img/a1.png",name:"个性化",intro:"告知需求，提供个性化定制"},
             {url:"./static/img/a3.png",name:"价格优惠",intro:"优惠促销，活动不断"},
             {url:"./static/img/a4.png",name:"地理位置",intro:"国内酒店，海外酒店，应有尽有"},
-            {url:"./static/img/a2.png",name:"品牌众多",intro:"合作品牌众多，任意挑选您喜欢的入住"},
+            {url:"./static/img/a2.png",name:"品牌众多",intro:"合作品牌众多，挑选喜欢的入住"},
           ],
           steps:[
-            {url:"./static/img/ste1.png",title:"1.点击登陆",intro:"点击个人中心，进行用户登陆"},
+            {url:"./static/img/ste1.png",title:"1.登陆",intro:"点击个人中心，进行用户登陆"},
             {url:"./static/img/ste2.png",title:"2.输入信息",intro:"输入相关个人信息"},
-            {url:"./static/img/ste3.png",title:"3.预定",intro:"挑选您想入住的酒店，输入入住时间，并点击预定。"},
+            {url:"./static/img/ste3.png",title:"3.预定",intro:"挑选入住的酒店，点击预定。"},
             {url:"./static/img/ste4.png",title:"4.提交",intro:"确保信息无误，点击提交"}
           ],
           kinds:[
@@ -92,8 +97,8 @@
     }
 </script>
 
-<style lang="stylus" scoped>
-.container
+<style lang="stylus">
+.container_h
   padding-top 50px
   font-size 0
   .hotels
@@ -106,18 +111,20 @@
     background #eee
   .pic
     width 100%
+    height 600px
     img
       width 100%
-      height 600px
+      height 100%
   .advantages
     background #f7f8fa
   .advantages,.steps
     width 100%
-    padding 80px 0
+    padding 50px 0
     height 300px
     .content
       margin 0 auto
       max-width 1080px
+      height 300px
       .title
         text-align center
         font-size 26px
@@ -129,7 +136,7 @@
         padding 20px
         margin-right 6.6%
         width 20%
-        height 200px
+        height 67%
         background no-repeat
         background-size 25%
         background-position 50% 20%
@@ -165,12 +172,220 @@
         width 19%
         margin-right 1%
         font-size 16px
-      .item:last-child
-        margin-rignt 0
-       .introduce
+        .introduce
           height 190px
           transition height 1s
           overflow hidden
+          .image
+            height 150px
+          .name
+            padding 5px 10px 10px 10px
+            text-align center
+            .nameDetail
+              font-weight 600
+              letter-spacing 5px
+            .intro
+              padding-top 5px
+              text-align center
+              .time
+                font-size 14px
         .introduce:hover
-          height 280px
+          height 270px
+      .item:last-child
+        margin-rignt 0
+@media screen and (max-width:1300px){
+  .container_h .pic {
+    height 510px
+  }
+    .container_h .pic img {
+      height 85%
+    }
+  }
+@media screen and (max-width:1000px){
+  .container_h .pic {
+    height 450px
+  }
+  .container_h .pic img {
+    height 75%
+  }
+}
+@media screen and (max-width:880px){
+  .container_h .kinds .content .item .introduce:hover {
+    height 320px
+  }
+}
+@media screen and (max-width:800px) {
+  .container_h .advantages .content .title, .container_h .steps .content .title{
+    font-size 24px
+  }
+}
+@media screen and (max-width:750px){
+  .container_h .advantages .content .title, .container_h .steps .content .title{
+    font-size 22px
+  }
+  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
+    font-size 16px
+  }
+  .container_h .advantages .content .item .intro, .container_h .steps .content .item .intro {
+    font-size 12px
+  }
+}
+@media screen and (max-width:700px) {
+  .container_h .kinds{
+    height 450px
+  }
+  .container_h .kinds .content .title {
+    font-size 22px
+  }
+  .container_h .kinds .content .item .introduce .image {
+    height 100px
+  }
+  .container_h .kinds .content .item {
+    font-size 14px
+  }
+  .container_h .kinds .content .item .introduce .name .nameDetail  {
+    letter-spacing 3px
+  }
+  .container_h .kinds .content .item .introduce .name .intro {
+    padding-top 10px
+  }
+  .container_h .kinds .content .item .introduce {
+    height 135px
+  }
+  .container_h .kinds .content .item .introduce:hover {
+    height 250px
+  }
+  .container_h .kinds .content .item .introduce .name .intro .time {
+    font-size 12px
+  }
+}
+@media screen and (max-width:640px) {
+  .container_h .kinds{
+    height 410px
+  }
+  .container_h .kinds .content .title {
+    font-size 20px
+  }
+  .container_h .kinds .content .item .introduce .image {
+    height 80px
+  }
+  .container_h .kinds .content .item {
+    font-size 12px
+  }
+  .container_h .kinds .content .item .introduce .name .nameDetail  {
+    letter-spacing 2px
+  }
+  .container_h .kinds .content .item .introduce .name .intro {
+    padding-top 10px
+  }
+  .container_h .kinds .content .item .introduce {
+    height 110px
+  }
+  .container_h .kinds .content .item .introduce:hover {
+    height 245px
+  }
+  .container_h .kinds .content .item .introduce .name .intro .time {
+    font-size 10px
+  }
+}
+@media screen and (max-width:620px) {
+  .container_h .advantages .content .title, .container_h .steps .content .title{
+    font-size 20px
+  }
+}
+@media screen and (max-width:600px){
+  .container_h .pic {
+    height 330px
+  }
+  .container_h .pic img {
+    height 55%
+  }
+  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
+    font-size 14px
+  }
+}
+@media screen and (max-width:505px) {
+  .container_h .kinds .content .item .introduce .image {
+    height 60px
+  }
+  .container_h .kinds .content .item .introduce .name .nameDetail {
+    letter-spacing 0
+  }
+  .container_h .kinds .content .item .introduce .name .intro {
+    padding-top 10px
+  }
+  .container_h .kinds .content .item .introduce {
+    height 90px
+  }
+  .container_h .kinds .content .item .introduce:hover {
+    height 230px
+  }
+  .container_h .kinds .content .item .introduce .name {
+    padding: 5px 5px 10px 5px
+  }
+  .container_h .kinds{
+    height 390px
+  }
+  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
+    padding: 50px 0 10px 0;
+  }
+}
+@media screen and (max-width:470px){
+  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
+    font-size 14px
+  }
+  .container_h .pic {
+    height 270px
+  }
+  .container_h .pic img {
+    height 45%
+  }
+}
+@media screen and (max-width:440px){
+  .container_h .advantages .content .item , .container_h .steps .content .item {
+    padding 20px 5px
+  }
+  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
+    padding 50px 0 5px 0
+  }
+}
+@media screen and (max-width:400px) {
+  .container_h .kinds{
+    height 370px
+  }
+  .container_h .kinds .content .item .introduce .name .nameDetail {
+    font-size 10px
+  }
+  .container_h .kinds .content .item .introduce .image {
+    height 40px
+  }
+  .container_h .kinds .content .item .introduce {
+    height 70px
+  }
+  .container_h .kinds .content .item .introduce:hover {
+    height 210px
+  }
+  .container_h .kinds .content .item .introduce .name {
+    padding: 5px 0 10px 0
+  }
+  .container_h .advantages .content .title, .container_h .steps .content .title {
+    padding-bottom 25px
+  }
+}
+@media screen and (max-width:350px){
+  .container_h .kinds .content .item .introduce {
+    height 80px
+  }
+  .container_h .kinds .content .item .introduce:hover {
+    height 265px
+  }
+  .container_h .kinds{
+    height 400px
+  }
+  .container_h .advantages .content .item, .container_h .steps .content .item {
+    margin-right: 3.6%;
+    width: 22%;
+  }
+}
+
 </style>

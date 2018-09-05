@@ -154,4 +154,44 @@
               width 46%
             .btn
               width 20%
+@media screen and (max-width:1080px){
+  .container_hot .rank .hot-hotel{
+    width 100%
+  }
+  .container_hot .rank .search{
+    width 0
+  }
+  .container_hot .rank .search .theme, .container_hot .rank .search .line{
+    display none
+  }
+}
+@media screen and (max-width:530px) {
+  .container_hot .rank .hot-hotel .title .item {
+    font-size 14px
+  }
+  .container_hot .rank .search .theme {
+    font-size 14px
+  }
+}
+@media screen and (max-width:470px) {
+  .container_hot .rank .hot-hotel .title .item {
+    margin-right 1px
+  }
+}
+@media screen and (max-width:400px) {
+  .container_hot .rank .hot-hotel .title .item {
+    font-size 12px
+  }
+  .container_hot .rank .search .theme {
+    font-size 12px
+  }
+}
+@media screen and (max-width:350px) {
+  .container_hot .rank .hot-hotel .title .item {
+    margin-right -1px
+  }
+  .iconfont {
+    font-size 1px
+  }
+}
 </style>

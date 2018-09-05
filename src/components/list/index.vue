@@ -62,7 +62,7 @@
     background #e8f4ff
     box-shadow 0 0 6px 1px rgba(0,0,0,0.2)
   .left
-    width 20%
+    width 23%
     vertical-align top
     display inline-block
     .pic
@@ -70,7 +70,7 @@
       display inline-block
       height 130px
   .center
-    width 65%
+    width 57%
     display inline-block
     font-size 12px
     .name
@@ -93,7 +93,7 @@
       padding-top 10px
       color #999
   .right
-    width 15%
+    width 20%
     display inline-block
     text-align right
     vertical-align top
@@ -107,4 +107,127 @@
       vertical-align text-bottom
       margin-left 5px
       color #ff6600
+@media screen and (max-width:1080px){
+  .list_hot .left{
+    width 17%
+  }
+  .list_hot .center {
+    width 61%
+  }
+}
+@media screen and (max-width:1000px){
+  .list_hot .left{
+    width 20%
+  }
+  .list_hot .center {
+    width 60%
+  }
+}
+@media screen and (max-width:950px){
+  .list_hot .left{
+    width 22%
+  }
+  .list_hot .center {
+    width 58%
+  }
+}
+@media screen and (max-width:850px){
+  .list_hot{
+    height 130px
+  }
+  .list_hot .left .pic {
+    height 110px
+  }
+}
+@media screen and (max-width:780px){
+  .list_hot .left{
+    width 22%
+  }
+  .list_hot .center {
+    width 58%
+  }
+}
+@media screen and (max-width:630px){
+  .list_hot .left{
+    width 25%
+  }
+  .list_hot .center {
+    width 55%
+  }
+}
+@media screen and (max-width:600px) {
+  .list_hot .center .name .star {
+    display: none !important
+  }
+}
+@media screen and (max-width:560px){
+  .list_hot{
+    height 110px
+  }
+  .list_hot .left .pic {
+    height 90px
+  }
+  .list_hot .center .name {
+    margin-bottom 2px
+  }
+  .list_hot .center .assess {
+    padding-top 8px
+  }
+  .list_hot .center .name {
+    font-size 12px
+  }
+  .list_hot .center {
+    font-size 10px
+  }
+  .list_hot .center .name .star .el-rate__icon {
+    font-size 12px
+  }
+}
+@media screen and (max-width:500px){
+  .list_hot .right .math {
+    font-size 20px
+  }
+  .address,.list_hot .center .assess,.score{
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+  }
+}
+@media screen and (max-width:490px){
+  .list_hot .center .name{
+    overflow hidden
+    text-overflow ellipsis
+    white-space nowrap
+  }
+}
+@media screen and (max-width:470px){
+  .list_hot .left{
+    width 27%
+  }
+  .list_hot .center {
+    width 52%
+  }
+}
+@media screen and (max-width:425px){
+  .list_hot .right .math {
+    font-size 16px
+  }
+}
+@media screen and (max-width:380px){
+  .list_hot .left{
+    width 35%
+  }
+  .list_hot .center{
+    width 40%
+  }
+  .list_hot .right {
+   width 25%
+  }
+  .list_hot{
+    height 105px
+  }
+  .list_hot .left .pic {
+    height 85px
+  }
+}
 </style>

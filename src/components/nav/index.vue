@@ -142,7 +142,7 @@
       width 10%
       text-align center
       .book
-        margin-top 12%
+        vertical-align middle
         border 0
         outline none
         width 80px
@@ -218,9 +218,6 @@
   .container_p .nav .left .item {
     font-size 12px
   }
-  .container_p .nav .right .book{
-   margin-top 17%
-  }
 }
 @media screen and (max-width:360px){
   .container_p .nav .left{
@@ -247,7 +244,4 @@
     width 90%
   }
 }
-
-
-
 </style>
