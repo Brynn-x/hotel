@@ -1,8 +1,8 @@
 <template>
-    <div class="container">
+    <div class="container_c">
       <div class="animateShow">
         <template>
-          <el-carousel indicator-position="none" :interval="4000" type="card" height="350px">
+          <el-carousel class="animate" indicator-position="none" :interval="4000" type="card">
             <el-carousel-item v-for="(item, index) in animateShow" :key="index">
               <img class="pic" :src="item.src" alt="">
               <div class="brand">{{item.brand}}</div>
@@ -75,28 +75,31 @@
     }
 </script>
 
-<style lang="stylus" scoped>
-.container
+<style lang="stylus" >
+.container_c
   padding-top 50px
   height 2000px
   .animateShow
     margin 0 auto
     background #f7f8fa
-    .pic
-      position relative
-      width 690px
-      height 350px
-    .brand
-      margin-left 30px
-      position absolute
-      left 0
-      bottom 50px
-      height 25px
-      line-height 25px
-      color white
-      letter-spacing 3px
-      border-top 1px solid white
-      border-bottom 1px solid white
+    height 400px
+    .el-carousel__container
+      height 400px
+      .pic
+        position relative
+        width 100%
+        height 100%
+      .brand
+        margin-left 30px
+        position absolute
+        left 0
+        bottom 10%
+        height 25px
+        line-height 25px
+        color white
+        letter-spacing 3px
+        border-top 1px solid white
+        border-bottom 1px solid white
   .introFirst,.introSecond
     text-align center
     height 280px
@@ -138,4 +141,124 @@
     .pic
       width 100%
       height 400px
+@media screen and (max-width:1300px){
+  .container_c .animateShow{
+    height 350px
+  }
+  .container_c .animateShow .el-carousel__container {
+    height 350px
+  }
+  .container_c .animateShow .pic {
+    height 350px
+  }
+}
+@media screen and (max-width:1100px){
+  .container_c .animateShow{
+    height 300px
+  }
+  .container_c .animateShow .el-carousel__container {
+    height 300px
+  }
+  .container_c .animateShow .pic {
+    height 300px
+  }
+}
+@media screen and (max-width:900px){
+  .container_c .animateShow{
+    height 250px
+  }
+  .container_c .animateShow .el-carousel__container {
+    height 250px
+  }
+  .container_c .animateShow .pic {
+    height 250px
+  }
+  .container_c .introFirst .introBig, .container_c .introSecond .introBig {
+    font-size 32px
+    height 150px
+  }
+  .container_c .introFirst, .container_c .introSecond{
+    height 260px
+  }
+}
+@media screen and (max-width:700px){
+  .container_c .animateShow{
+    height 200px
+  }
+  .container_c .animateShow .el-carousel__container{
+    height 200px
+  }
+  .container_c .animateShow .pic {
+    height 200px
+  }
+  .container_c .introFirst .introBig, .container_c .introSecond .introBig {
+    font-size 26px
+    height 140px
+  }
+  .container_c .introFirst .introSmall, .container_c .introSecond .introSmall {
+    font-size 20px
+  }
+  .container_c .introFirst, .container_c .introSecond{
+    height 240px
+  }
+}
+@media screen and (max-width:580px){
+  .container_c .introFirst .introBig, .container_c .introSecond .introBig {
+    font-size 22px
+    height 130px
+  }
+  .container_c .introFirst .introSmall, .container_c .introSecond .introSmall {
+    font-size 18px
+  }
+  .container_c .introFirst, .container_c .introSecond{
+    height 220px
+  }
+}
+@media screen and (max-width:500px){
+  .container_c .animateShow{
+    height 150px
+  }
+  .container_c .animateShow .el-carousel__container {
+    height 150px
+  }
+  .container_c .animateShow .pic {
+    height 150px
+  }
+  .container_c .introFirst .introBig, .container_c .introSecond .introBig {
+    font-size 18px
+    height 95px
+    line-height 140px
+  }
+  .container_c .introFirst .introSmall, .container_c .introSecond .introSmall {
+    font-size 14px
+  }
+  .container_c .introFirst, .container_c .introSecond{
+    height 190px
+  }
+}
+@media screen and (max-width:400px){
+  .container_c .animateShow{
+    height 120px
+  }
+  .container_c .animateShow .el-carousel__container {
+    height 120px
+  }
+  .container_c .animateShow .pic {
+    height 120px
+  }
+  .brand{
+    font-size 14px
+  }
+  .container_c .introFirst .introBig, .container_c .introSecond .introBig {
+    font-size 14px
+    height 75px
+    line-height 110px
+  }
+  .container_c .introFirst .introSmall, .container_c .introSecond .introSmall {
+    font-size 10px
+  }
+  .container_c .introFirst, .container_c .introSecond{
+    height 150px
+  }
+}
 </style>

@@ -219,29 +219,15 @@
     font-size 12px
   }
 }
-@media screen and (max-width:360px){
+@media screen and (max-width:370px){
   .container_p .nav .left{
-    width 80%
+    width 100%
   }
   .container_p .nav .right{
-    width 20%
+    width 0
   }
   .container_p .nav .left .item {
     font-size 10px
-  }
-  .container_p .nav .right .book{
-    width 80%
-  }
-}
-@media screen and (max-width:316px){
-  .container_p .nav .left{
-    width 81%
-  }
-  .container_p .nav .right{
-    width 19%
-  }
-  .container_p .nav .right .book{
-    width 90%
   }
 }
 </style>

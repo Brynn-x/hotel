@@ -112,6 +112,8 @@
   .pic
     width 100%
     height 600px
+    .el-carousel__arrow
+      top 30%
     img
       width 100%
       height 100%
@@ -370,6 +372,11 @@
   }
   .container_h .advantages .content .title, .container_h .steps .content .title {
     padding-bottom 25px
+  }
+}
+@media screen and (max-width:370px){
+  .container_h.hotels{
+    font-size 13px
   }
 }
 @media screen and (max-width:350px){
