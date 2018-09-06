@@ -78,7 +78,7 @@
 <style lang="stylus" >
 .container_c
   padding-top 50px
-  height 2000px
+  height 2070px
   .animateShow
     margin 0 auto
     background #f7f8fa
@@ -113,19 +113,20 @@
     height 270px
     background #f7f8fa
     .content
+      position relative
+      top 25%
       margin 0 auto
       max-width 1080px
       font-size 0
+      height 50%
       .logo
         width 25%
-        display inline-block
+        height 100%
         text-align center
-        vertical-align top
-        height 270px
+        display inline-block
         .logoPic
-          margin-top 25%
-          width 50%
-          height 50%
+          width 135px
+          height 100%
           cursor pointer
           border-radius 50%
           box-shadow  0 0 8px 2px rgba(0,0,0,0.2)
@@ -140,7 +141,7 @@
   .end
     .pic
       width 100%
-      height 400px
+      height 450px
 @media screen and (max-width:1300px){
   .container_c .animateShow{
     height 350px
@@ -150,6 +151,12 @@
   }
   .container_c .animateShow .pic {
     height 350px
+  }
+  .container_c {
+    height 1960px
+  }
+  .container_c .end .pic {
+    height 390px
   }
 }
 @media screen and (max-width:1100px){
@@ -161,6 +168,12 @@
   }
   .container_c .animateShow .pic {
     height 300px
+  }
+  .container_c {
+    height 1900px
+  }
+  .container_c .end .pic {
+    height 380px
   }
 }
 @media screen and (max-width:900px){
@@ -175,10 +188,27 @@
   }
   .container_c .introFirst .introBig, .container_c .introSecond .introBig {
     font-size 32px
-    height 150px
+    height 145px
   }
   .container_c .introFirst, .container_c .introSecond{
-    height 260px
+    height 240px
+  }
+  .container_c .kindFirst, .container_c .kindSecond {
+    height 240px
+  }
+  .container_c .kindFirst .content .logo .logoPic, .container_c .kindSecond .content .logo .logoPic {
+    width 120px
+  }
+  .container_c .word {
+    height 110px
+    line-height 110px
+    font-size 32px
+  }
+  .container_c {
+    height 1670px
+  }
+  .container_c .end .pic {
+    height 350px
   }
 }
 @media screen and (max-width:700px){
@@ -193,25 +223,61 @@
   }
   .container_c .introFirst .introBig, .container_c .introSecond .introBig {
     font-size 26px
-    height 140px
+    height 120px
+    line-height 150px
   }
   .container_c .introFirst .introSmall, .container_c .introSecond .introSmall {
     font-size 20px
   }
   .container_c .introFirst, .container_c .introSecond{
-    height 240px
+    height 210px
+  }
+  .container_c .kindFirst, .container_c .kindSecond {
+    height 210px
+  }
+  .container_c .kindFirst .content .logo .logoPic, .container_c .kindSecond .content .logo .logoPic {
+    width 105px
+  }
+  .container_c .word {
+    height 90px
+    line-height 90px
+    font-size 26px
+  }
+  .container_c {
+    height 1410px
+  }
+  .container_c .end .pic {
+    height 280px
   }
 }
 @media screen and (max-width:580px){
   .container_c .introFirst .introBig, .container_c .introSecond .introBig {
     font-size 22px
-    height 130px
+    height 95px
+    line-height 120px
   }
   .container_c .introFirst .introSmall, .container_c .introSecond .introSmall {
     font-size 18px
   }
   .container_c .introFirst, .container_c .introSecond{
-    height 220px
+    height 170px
+  }
+  .container_c .kindFirst, .container_c .kindSecond {
+    height 170px
+  }
+  .container_c .kindFirst .content .logo .logoPic, .container_c .kindSecond .content .logo .logoPic {
+    width 85px
+  }
+  .container_c .word {
+    height 70px
+    line-height 70px
+    font-size 22px
+  }
+  .container_c {
+    height 1210px
+  }
+  .container_c .end .pic {
+    height 260px
   }
 }
 @media screen and (max-width:500px){
@@ -226,14 +292,31 @@
   }
   .container_c .introFirst .introBig, .container_c .introSecond .introBig {
     font-size 18px
-    height 95px
-    line-height 140px
+    height 80px
+    line-height 115px
   }
   .container_c .introFirst .introSmall, .container_c .introSecond .introSmall {
     font-size 14px
   }
   .container_c .introFirst, .container_c .introSecond{
-    height 190px
+    height 150px
+  }
+  .container_c .kindFirst, .container_c .kindSecond {
+    height 150px
+  }
+  .container_c .kindFirst .content .logo .logoPic, .container_c .kindSecond .content .logo .logoPic {
+    width 75px
+  }
+  .container_c .word {
+    height 50px
+    line-height 50px
+    font-size 18px
+  }
+  .container_c {
+    height 1020px
+  }
+  .container_c .end .pic {
+    height 220px
   }
 }
 @media screen and (max-width:400px){
@@ -251,14 +334,31 @@
   }
   .container_c .introFirst .introBig, .container_c .introSecond .introBig {
     font-size 14px
-    height 75px
-    line-height 110px
+    height 70px
+    line-height 95px
+  }
+  .container_c .introFirst, .container_c .introSecond{
+    height 130px
   }
   .container_c .introFirst .introSmall, .container_c .introSecond .introSmall {
     font-size 10px
   }
-  .container_c .introFirst, .container_c .introSecond{
-    height 150px
+  .container_c .kindFirst, .container_c .kindSecond {
+    height 130px
+  }
+  .container_c .kindFirst .content .logo .logoPic, .container_c .kindSecond .content .logo .logoPic {
+    width 65px
+  }
+  .container_c .word {
+    height 40px
+    line-height 40px
+    font-size 14px
+  }
+  .container_c {
+    height 860px
+  }
+  .container_c .end .pic {
+    height 180px
   }
 }
 </style>
