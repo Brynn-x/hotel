@@ -199,9 +199,9 @@
   .container_h .pic {
     height 510px
   }
-    .container_h .pic img {
-      height 85%
-    }
+  .container_h .pic img {
+    height 85%
+  }
   }
 @media screen and (max-width:1000px){
   .container_h .pic {
@@ -215,13 +215,35 @@
   .container_h .kinds .content .item .introduce:hover {
     height 320px
   }
+  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
+    padding: 70px 0 10px 0
+  }
 }
 @media screen and (max-width:800px) {
+  .container_h .hotels {
+    line-height 50px
+  }
   .container_h .advantages .content .title, .container_h .steps .content .title{
     font-size 24px
   }
+  .container_h .advantages .content .title, .container_h .steps .content .title {
+    padding-bottom 40px
+  }
+  .container_h .advantages .content .item, .container_h .steps .content .item {
+    height 60%
+    padding 10px
+  }
+  .container_h .advantages, .container_h .steps {
+    padding 50px 0 20px 0
+  }
 }
 @media screen and (max-width:750px){
+  .container_h .pic {
+    height 420px
+  }
+  .container_h .pic img {
+    height 70%
+  }
   .container_h .advantages .content .title, .container_h .steps .content .title{
     font-size 22px
   }
@@ -230,6 +252,13 @@
   }
   .container_h .advantages .content .item .intro, .container_h .steps .content .item .intro {
     font-size 12px
+  }
+  .container_h .advantages, .container_h .steps{
+    padding 50px 0 0 0
+  }
+  .container_h .advantages .content .item, .container_h .steps .content .item {
+    height 53%
+    padding 5px
   }
 }
 @media screen and (max-width:700px) {
@@ -262,11 +291,32 @@
   }
 }
 @media screen and (max-width:640px) {
+  .container_h .pic {
+    height 360px
+  }
+  .container_h .pic img {
+    height 60%
+  }
+  .container_h .advantages, .container_h .steps {
+    padding 40px 0 0 0
+  }
+  .container_h .advantages, .container_h .steps {
+    height 280px
+  }
+  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
+    padding 60px 0 5px 0
+  }
+  .container_h .advantages .content .item, .container_h .steps .content .item {
+    height 48%
+  }
+  .container_h .kinds .content {
+    padding 40px 0
+  }
   .container_h .kinds{
     height 410px
   }
   .container_h .kinds .content .title {
-    font-size 20px
+    font-size 22px
   }
   .container_h .kinds .content .item .introduce .image {
     height 80px
@@ -307,6 +357,15 @@
   }
 }
 @media screen and (max-width:505px) {
+  .container_h .advantages, .container_h .steps {
+    height 260px
+  }
+  .container_h .advantages .content .item, .container_h .steps .content .item {
+    height 45%
+  }
+  .container_h .kinds .content .title {
+    font-size 20px
+  }
   .container_h .kinds .content .item .introduce .image {
     height 60px
   }
@@ -333,6 +392,21 @@
   }
 }
 @media screen and (max-width:470px){
+  .container_h .advantages, .container_h .steps {
+    height 230px
+  }
+  .container_h .advantages .content .title, .container_h .steps .content .title {
+    padding-bottom 30px
+  }
+  .container_h .advantages .content .item, .container_h .steps .content .item {
+    height 40%
+    margin-right 3.6%
+    width 22%
+    background-position 50% 20%
+  }
+  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
+    padding 42px 0 5px 0
+  }
   .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
     font-size 14px
   }
@@ -344,14 +418,21 @@
   }
 }
 @media screen and (max-width:440px){
-  .container_h .advantages .content .item , .container_h .steps .content .item {
-    padding 20px 5px
+  .container_h .advantages .content .item, .container_h .steps .content .item {
+    height 40%
+    background-position 50% 15%
   }
   .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
-    padding 50px 0 5px 0
+    padding 35px 0 2px 0
   }
 }
 @media screen and (max-width:400px) {
+  .container_h .advantages, .container_h .steps {
+    height 210px
+  }
+  .container_h .advantages .content .title, .container_h .steps .content .title {
+    padding-bottom 20px
+  }
   .container_h .kinds{
     height 370px
   }
@@ -376,10 +457,17 @@
 }
 @media screen and (max-width:370px){
   .container_h.hotels{
-    font-size 13px
+    font-size 12px
   }
 }
 @media screen and (max-width:350px){
+  .container_h .advantages .content .item, .container_h .steps .content .item {
+    margin-right: 1.6%;
+    width: 23%;
+  }
+  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
+    padding 28px 0 2px 0
+  }
   .container_h .kinds .content .item .introduce {
     height 80px
   }
@@ -388,10 +476,6 @@
   }
   .container_h .kinds{
     height 400px
-  }
-  .container_h .advantages .content .item, .container_h .steps .content .item {
-    margin-right: 3.6%;
-    width: 22%;
   }
 }
 

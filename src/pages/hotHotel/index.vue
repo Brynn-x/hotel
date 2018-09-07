@@ -96,7 +96,6 @@
     margin 0 auto
     max-width 1080px
     padding 20px 0
-    height 1300px
     .hot-hotel
       display inline-block
       vertical-align top

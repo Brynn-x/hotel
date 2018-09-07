@@ -1,5 +1,5 @@
 <template>
-      <div class="allRoom">
+      <div class="allRoom_r">
         <div class="nav">
           <span class="roomType">房型</span>
           <span class="bedType">床型</span>
@@ -86,8 +86,9 @@
     }
 </script>
 
-<style lang="stylus" scoped>
-  .allRoom
+<style lang="stylus">
+  .allRoom_r
+    max-width 1080px
     font-size 0
     .nav
       width 100%
@@ -97,6 +98,7 @@
       text-align center
       background #a0cfff
       .roomType,.bedType,.breakfast,.roomPrice
+        vertical-align top
         display inline-block
         font-size 16px
       .roomType
@@ -160,9 +162,9 @@
           .roomPrice
             font-size 0
             .price
+              width 50%
               display inline-block
               text-align right
-              width 50%
               .logo
                 vertical-align top
                 font-size 12px
@@ -174,9 +176,9 @@
               width 50%
               display inline-block
               vertical-align top
-              text-align right
+              text-align center
               .btn
-                margin 10px 30px 0 0
+                vertical-align middle
                 outline none
                 border none
                 font-size 14px
@@ -184,4 +186,114 @@
                 background #ff9a14
               .btn:hover
                 background #ff731f
+  @media screen and (max-width:900px){
+    .allRoom_r .room .name .roomType{
+      font-size 15px
+      padding 10px 0
+      background-size 90% 70%
+      background-position 50% 80%
+    }
+  }
+  @media screen and (max-width:800px){
+    .allRoom_r .room .name .roomType{
+      font-size 14px
+    }
+    .allRoom_r .room .name .roomType .detail {
+      font-size 10px
+    }
+    .allRoom_r .nav .roomType, .allRoom_r .nav .bedType, .allRoom_r .nav .breakfast, .allRoom_r .nav .roomPrice {
+      font-size 15px
+    }
+  }
+  @media screen and (max-width:750px){
+    .allRoom_r .room .name, .allRoom_r .nav .roomType {
+      width 25%
+    }
+    .allRoom_r .room .intro {
+      width 75%
+    }
+   .allRoom_r .nav .bedType, .allRoom_r .nav .breakfast, .allRoom_r .nav .roomPrice{
+     width 25%
+   }
+  }
+  @media screen and (max-width:580px){
+    .allRoom_r .room .name {
+      width 30%
+    }
+    .allRoom_r .room .intro {
+      width 70%
+    }
+    .allRoom_r .nav .roomType {
+      width 31%
+    }
+    .allRoom_r .nav .bedType, .allRoom_r .nav .breakfast, .allRoom_r .nav .roomPrice{
+      width 23%
+    }
+    .allRoom_r .nav .roomType, .allRoom_r .nav .bedType, .allRoom_r .nav .breakfast, .allRoom_r .nav .roomPrice {
+      font-size 14px
+    }
+  }
+  @media screen and (max-width:480px){
+    .allRoom_r .room .name {
+      width 34%
+    }
+    .allRoom_r .room .intro {
+      width 66%
+    }
+    .allRoom_r .nav .roomType {
+      width 34%
+    }
+    .allRoom_r .nav .bedType {
+      width 15%
+    }
+    .allRoom_r .nav .breakfast {
+      width 21%
+    }
+    .allRoom_r .nav .roomPrice {
+      width 30%
+    }
+    .allRoom_r .room .name .roomType {
+      height 120px
+    }
+    .allRoom_r .room .intro .item {
+      height 40px
+      line-height 40px
+    }
+    .allRoom_r .room {
+      height 600px
+    }
+    .allRoom_r .room .intro .item .roomPrice .price .math {
+      font-size 16px
+    }
+  }
+  @media screen and (max-width:430px){
+    .allRoom_r .room .name .roomType .detail{
+      display block
+    }
+    .allRoom_r .room .name .roomType{
+      padding 0
+      background-size 90% 60%
+    }
+  }
+  @media screen and (max-width:380px){
+    .allRoom_r .room .intro .item .bedType, .allRoom_r .room .intro .item .breakfast, .allRoom_r .room .intro .item .roomPrice {
+      font-size 12px
+    }
+    .item .roomPrice .book .btn {
+      font-size 12px
+    }
+    .allRoom_r .room .intro .item .bedType {
+      width 17%
+    }
+    .allRoom_r .room .intro .item .breakfast {
+      width 33%
+    }
+    .allRoom_r .room .intro .item .roomPrice {
+      width 45%
+    }
+    .allRoom_r .room .intro .item .roomPrice .book {
+      width 45%
+    }
+  }
+
 </style>

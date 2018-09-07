@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-dialog class="title" :visible="dialogVisible" width="30%" @close="close">
+    <el-dialog class="title" :visible="dialogVisible" @close="close">
 
       <el-tabs v-model="currentIndex" @tab-click="handleClick">
         <el-tab-pane label="登陆" name="0"></el-tab-pane>
@@ -167,21 +167,83 @@
 <style lang="stylus">
 .title
   text-align center
-  .el-tabs__header
-    margin-bottom 40px
-  .el-tabs__nav
+  .el-dialog
+    width 30%
+    .el-tabs__header
+      margin-bottom 40px
+    .el-tabs__nav
+      width 100%
+      .el-tabs__item
+        width 50%
+    .el-form-item__label
+      width 75px !important
+      text-align left
+    .el-form-item__content
+      margin-left 75px !important
+    .el-dialog__body
+      padding 30px 60px
+      .el-form-item__label:before
+        content: ''
+      .el-button--primary
+       margin 20px 0 0 20px
+@media screen and (max-width:1350px) {
+  .title .el-dialog{
+    width 40%
+  }
+}
+@media screen and (max-width:1000px) {
+  .title .el-dialog{
+    width 50%
+  }
+}
+@media screen and (max-width:800px) {
+  .title .el-dialog{
+    width 60%
+  }
+}
+@media screen and (max-width:650px) {
+  .title .el-dialog{
+    width 70%
+  }
+}
+@media screen and (max-width:560px) {
+  .title .el-dialog{
+    width 80%
+  }
+}
+@media screen and (max-width:500px) {
+  .title .el-dialog{
+    width 90%
+  }
+}
+@media screen and (max-width:450px) {
+  .title .el-dialog{
     width 100%
-    .el-tabs__item
-      width 50%
-  .el-form-item__label
-    width 75px !important
-    text-align left
-  .el-form-item__content
-    margin-left 75px !important
-  .el-dialog__body
-    padding 30px 60px
-    .el-form-item__label:before
-      content: ''
-    .el-button--primary
-     margin 20px 0 0 20px
+  }
+}
+@media screen and (max-width:400px) {
+  body .el-dialog__wrapper .el-dialog .el-dialog__body {
+    padding 15px 40px
+  }
+  .el-button {
+    padding 10px 15px
+  }
+  .el-form-item {
+    margin-bottom: 15px;
+  }
+  .title .el-dialog .el-dialog__body .el-button--primary {
+    margin: 15px 0 0 20px;
+  }
+}
+@media screen and (max-width:350px) {
+  body .el-dialog__wrapper .el-dialog .el-dialog__body {
+    padding 15px 30px
+  }
+  .el-button {
+    padding 10px 15px
+  }
+  .el-form-item {
+    margin-bottom: 12px;
+  }
+}
 </style>
