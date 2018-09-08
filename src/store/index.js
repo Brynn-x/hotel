@@ -9,6 +9,8 @@ export default new vuex.Store({
     loading: false,
     //弹窗是否出现
     bulletBox: false,
+    //当前导航栏高亮项对应索引值
+    currentIndexLight: 0,
     //回调函数
     foo: function () {},
   }

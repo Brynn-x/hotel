@@ -30,17 +30,18 @@
     export default {
       data() {
         return{
-          currentIndex: 0,
           arr: [],
         }
       },
       methods: {
         light: function (index) {
-          this.currentIndex = index;
+          if(index !== 3) {
+            this.$store.state.currentIndexLight  = index;
+          }
         },
         book: function () {
           this.$router.push({path:"/hotHotel"});
-          this.currentIndex = 1
+          this.$store.state.currentIndexLight  = 1
         }
       },
       computed: {
@@ -52,6 +53,9 @@
             {name: this.$store.state.loading ? "个人中心" : "登陆/注册" ,path:"/personalCenter"}
           ]
         },
+        currentIndex(){
+         return this.$store.state.currentIndexLight
+        }
       },
       created () {
         if ( localStorage.name  === "123" && localStorage.psd === "123" ) {

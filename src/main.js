@@ -34,14 +34,16 @@ new Vue({
   created() {
     router.beforeEach((to, from, next) => {
       if (to.path === "/personalCenter") {
-        if(this.$store.state.loading === false) {
-          this.$store.state.bulletBox = true;
-          this.$store.state.foo = () => {
-          //我是导航栏登陆成功的回调
-            this.$router.push({path:"/personalCenter"})
+        if (this.$store.state.loading === false) {
+            this.$store.state.bulletBox = true;
+            this.$store.state.foo = () => {
+            //我是导航栏登陆成功的回调
+            this.$router.push({path:"/personalCenter"});
+            this.$store.state.currentIndexLight = 3;
           }
         }
         else if (this.$store.state.loading === true) {
+          this.$store.state.currentIndexLight = 3;
           next();
         }
       }

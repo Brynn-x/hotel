@@ -5,7 +5,7 @@
     <!--轮播图-->
     <div class="pic">
       <template>
-        <el-carousel indicator-position="none" height="600px">
+        <el-carousel indicator-position="none">
           <el-carousel-item v-for="(item, index) in pics" :key="index">
             <img :src="item" alt="">
           </el-carousel-item>
@@ -91,7 +91,8 @@
       },
       methods: {
         jump: function () {
-          this.$router.push({path:"/hotHotel"})
+          this.$router.push({path:"/hotHotel"});
+          this.$store.state.currentIndexLight = 1;
         }
       }
     }
@@ -111,9 +112,11 @@
     background #eee
   .pic
     width 100%
-    height 600px
-    .el-carousel__arrow
-      top 30%
+    height 100%
+    .el-carousel__container
+      height 600px
+      .el-carousel__arrow
+        top 50%
     img
       width 100%
       height 100%
@@ -138,7 +141,7 @@
         padding 20px
         margin-right 6.6%
         width 20%
-        height 67%
+        height 70%
         background no-repeat
         background-size 25%
         background-position 50% 20%
@@ -157,7 +160,7 @@
           font-size 14px
   .kinds
     width 100%
-    height 500px
+    height 460px
     background #f7f8fa
     font-size 0
     .content
@@ -167,7 +170,7 @@
       .title
         text-align center
         font-size 26px
-        padding-bottom 50px
+        padding-bottom 40px
       .item
         vertical-align top
         display inline-block
@@ -176,54 +179,69 @@
         font-size 16px
         .introduce
           height 190px
+          width 100%
           transition height 1s
           overflow hidden
           .image
             height 150px
+            width 100%
           .name
             padding 5px 10px 10px 10px
             text-align center
             .nameDetail
               font-weight 600
-              letter-spacing 5px
+              letter-spacing 10px
             .intro
-              padding-top 5px
-              text-align center
+              padding 5px
+              text-align left
+              letter-spacing 3px
               .time
                 font-size 14px
         .introduce:hover
-          height 270px
+          height 280px
       .item:last-child
         margin-rignt 0
 @media screen and (max-width:1300px){
-  .container_h .pic {
+  .container_h .pic ,.container_h .pic .el-carousel .el-carousel__container{
     height 510px
   }
-  .container_h .pic img {
-    height 85%
-  }
-  }
-@media screen and (max-width:1000px){
-  .container_h .pic {
-    height 450px
-  }
-  .container_h .pic img {
-    height 75%
+}
+@media screen and (max-width:1100px){
+  .container_h .kinds .content .item .introduce:hover {
+    height 300px
   }
 }
-@media screen and (max-width:880px){
+@media screen and (max-width:1000px){
+  .container_h .pic ,.container_h .pic .el-carousel .el-carousel__container {
+    height 450px
+  }
+}
+@media screen and (max-width:900px){
+  .container_h .kinds .content .item .introduce{
+    height 280px
+  }
   .container_h .kinds .content .item .introduce:hover {
-    height 320px
+    height 280px
   }
   .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
     padding: 70px 0 10px 0
   }
+  .container_h .kinds .content .item .introduce .name .intro{
+    overflow hidden
+    text-overflow ellipsis
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
 }
 @media screen and (max-width:800px) {
+  .container_h .pic ,.container_h .pic .el-carousel .el-carousel__container {
+    height 390px
+  }
   .container_h .hotels {
     line-height 50px
   }
-  .container_h .advantages .content .title, .container_h .steps .content .title{
+  .container_h .advantages .content .title, .container_h .steps .content .title,.container_h .kinds .content .title{
     font-size 24px
   }
   .container_h .advantages .content .title, .container_h .steps .content .title {
@@ -236,246 +254,137 @@
   .container_h .advantages, .container_h .steps {
     padding 50px 0 20px 0
   }
-}
-@media screen and (max-width:750px){
-  .container_h .pic {
+  .container_h .kinds{
     height 420px
   }
-  .container_h .pic img {
-    height 70%
+  .container_h .kinds .content .item .introduce{
+    height 270px
   }
-  .container_h .advantages .content .title, .container_h .steps .content .title{
-    font-size 22px
+  .container_h .kinds .content .item .introduce:hover{
+    height 270px
   }
-  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
-    font-size 16px
+  .container_h .kinds .content .item .introduce .image {
+    height 120px
   }
-  .container_h .advantages .content .item .intro, .container_h .steps .content .item .intro {
-    font-size 12px
-  }
-  .container_h .advantages, .container_h .steps{
-    padding 50px 0 0 0
-  }
-  .container_h .advantages .content .item, .container_h .steps .content .item {
-    height 53%
-    padding 5px
+  .container_h .kinds .content .item .introduce .name .nameDetail{
+    letter-spacing 5px
   }
 }
 @media screen and (max-width:700px) {
-  .container_h .kinds{
-    height 450px
-  }
-  .container_h .kinds .content .title {
-    font-size 22px
-  }
-  .container_h .kinds .content .item .introduce .image {
-    height 100px
-  }
-  .container_h .kinds .content .item {
-    font-size 14px
-  }
-  .container_h .kinds .content .item .introduce .name .nameDetail  {
-    letter-spacing 3px
-  }
-  .container_h .kinds .content .item .introduce .name .intro {
-    padding-top 10px
-  }
-  .container_h .kinds .content .item .introduce {
-    height 135px
-  }
-  .container_h .kinds .content .item .introduce:hover {
-    height 250px
-  }
-  .container_h .kinds .content .item .introduce .name .intro .time {
-    font-size 12px
-  }
-}
-@media screen and (max-width:640px) {
-  .container_h .pic {
-    height 360px
-  }
-  .container_h .pic img {
-    height 60%
-  }
-  .container_h .advantages, .container_h .steps {
-    padding 40px 0 0 0
-  }
-  .container_h .advantages, .container_h .steps {
-    height 280px
-  }
-  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
-    padding 60px 0 5px 0
-  }
-  .container_h .advantages .content .item, .container_h .steps .content .item {
-    height 48%
-  }
-  .container_h .kinds .content {
-    padding 40px 0
-  }
-  .container_h .kinds{
-    height 410px
-  }
-  .container_h .kinds .content .title {
-    font-size 22px
-  }
-  .container_h .kinds .content .item .introduce .image {
-    height 80px
-  }
-  .container_h .kinds .content .item {
-    font-size 12px
-  }
-  .container_h .kinds .content .item .introduce .name .nameDetail  {
-    letter-spacing 2px
-  }
-  .container_h .kinds .content .item .introduce .name .intro {
-    padding-top 10px
-  }
-  .container_h .kinds .content .item .introduce {
-    height 110px
-  }
-  .container_h .kinds .content .item .introduce:hover {
-    height 245px
-  }
-  .container_h .kinds .content .item .introduce .name .intro .time {
-    font-size 10px
-  }
-}
-@media screen and (max-width:620px) {
-  .container_h .advantages .content .title, .container_h .steps .content .title{
-    font-size 20px
-  }
-}
-@media screen and (max-width:600px){
-  .container_h .pic {
+  .container_h .pic ,.container_h .pic .el-carousel .el-carousel__container{
     height 330px
   }
-  .container_h .pic img {
-    height 55%
-  }
-  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
-    font-size 14px
-  }
-}
-@media screen and (max-width:505px) {
   .container_h .advantages, .container_h .steps {
-    height 260px
-  }
-  .container_h .advantages .content .item, .container_h .steps .content .item {
-    height 45%
-  }
-  .container_h .kinds .content .title {
-    font-size 20px
-  }
-  .container_h .kinds .content .item .introduce .image {
-    height 60px
-  }
-  .container_h .kinds .content .item .introduce .name .nameDetail {
-    letter-spacing 0
-  }
-  .container_h .kinds .content .item .introduce .name .intro {
-    padding-top 10px
-  }
-  .container_h .kinds .content .item .introduce {
-    height 90px
-  }
-  .container_h .kinds .content .item .introduce:hover {
-    height 230px
-  }
-  .container_h .kinds .content .item .introduce .name {
-    padding: 5px 5px 10px 5px
-  }
-  .container_h .kinds{
-    height 390px
-  }
-  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
-    padding: 50px 0 10px 0;
-  }
-}
-@media screen and (max-width:470px){
-  .container_h .advantages, .container_h .steps {
-    height 230px
+    padding 40px 0 20px 0
+    height 440px
   }
   .container_h .advantages .content .title, .container_h .steps .content .title {
     padding-bottom 30px
   }
-  .container_h .advantages .content .item, .container_h .steps .content .item {
-    height 40%
-    margin-right 3.6%
-    width 22%
-    background-position 50% 20%
+  .container_h .advantages .content .item , .container_h .steps .content .item {
+    margin 0 0 0 13.3%
+    width 30%
+    height 58%
+    background-size: 20%;
   }
-  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
-    padding 42px 0 5px 0
+  .container_h .advantages .content .title, .container_h .steps .content .title,.container_h .kinds .content .title{
+    font-size 22px
   }
-  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
-    font-size 14px
+  .container_h .advantages .content .item .name , .container_h .steps .content .item .name{
+    font-size 16px
   }
-  .container_h .pic {
-    height 270px
+  .container_h .kinds {
+    height 400px
   }
-  .container_h .pic img {
-    height 45%
+  .container_h .kinds .content {
+    padding 40px 0
   }
-}
-@media screen and (max-width:440px){
-  .container_h .advantages .content .item, .container_h .steps .content .item {
-    height 40%
-    background-position 50% 15%
+  .container_h .kinds .content .item .introduce {
+    height 250px
   }
-  .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
-    padding 35px 0 2px 0
-  }
-}
-@media screen and (max-width:400px) {
-  .container_h .advantages, .container_h .steps {
-    height 210px
-  }
-  .container_h .advantages .content .title, .container_h .steps .content .title {
-    padding-bottom 20px
-  }
-  .container_h .kinds{
-    height 370px
-  }
-  .container_h .kinds .content .item .introduce .name .nameDetail {
-    font-size 10px
+  .container_h .kinds .content .item .introduce:hover {
+    height 250px
   }
   .container_h .kinds .content .item .introduce .image {
-    height 40px
+    height 100px
+  }
+  .container_h .kinds .content .item .introduce .name .nameDetail{
+    letter-spacing 3px
+  }
+  }
+@media screen and (max-width:650px){
+  .container_h .kinds .content .item .introduce .name .nameDetail{
+    letter-spacing 1px
+  }
+}
+@media screen and (max-width:585px){
+  .container_h .kinds .content .item .introduce .name .nameDetail{
+    font-size 15px
   }
   .container_h .kinds .content .item .introduce {
-    height 70px
+    height 240px
   }
   .container_h .kinds .content .item .introduce:hover {
-    height 210px
-  }
-  .container_h .kinds .content .item .introduce .name {
-    padding: 5px 0 10px 0
-  }
-  .container_h .advantages .content .title, .container_h .steps .content .title {
-    padding-bottom 25px
+    height 240px
   }
 }
-@media screen and (max-width:370px){
-  .container_h.hotels{
-    font-size 12px
+@media screen and (max-width:550px){
+  .container_h .pic ,.container_h .pic .el-carousel .el-carousel__container{
+    height 300px
   }
-}
-@media screen and (max-width:350px){
-  .container_h .advantages .content .item, .container_h .steps .content .item {
-    margin-right: 1.6%;
-    width: 23%;
+  .container_h .advantages .content .item , .container_h .steps .content .item {
+    margin 0 0 0 8%
+    width 38%
+    height 40%
+    background-size 20%
   }
   .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
-    padding 28px 0 2px 0
+    padding 55px 0 10px 0
+  }
+  .container_h .advantages, .container_h .steps {
+    padding 50px 0 20px 0
+    height 390px
+  }
+  .container_h .advantages .content .item , .container_h .steps .content .item {
+    height 55%
+  }
+  .container_h .kinds {
+    height 360px
   }
   .container_h .kinds .content .item .introduce {
-    height 80px
+    height 220px
   }
   .container_h .kinds .content .item .introduce:hover {
-    height 265px
+    height 220px
   }
-  .container_h .kinds{
-    height 400px
+  .container_h .kinds .content .item .introduce .image {
+    height 80px
+  }
+  .container_h .kinds .content .item .introduce .name{
+    font-size 14px
+  }
+  .container_h .kinds .content .item .introduce .name .intro {
+    padding 4px
+  }
+  .container_h .kinds .content .item{
+    margin-right 3.3%
+    width 30%
+    height 70%
+  }
+  .container_h .kinds .content .item:nth-child(n+5){
+    width 0
+    overflow hidden
+  }
+}
+@media screen and (max-width:400px){
+  .container_h .pic ,.container_h .pic .el-carousel .el-carousel__container{
+    height 300px
+  }
+  .container_h .advantages .content .item , .container_h .steps .content .item {
+    margin 0 0 0 6.6%
+    width 40%
+    height 50%
+    background-size 20%
   }
 }
 
