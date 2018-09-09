@@ -274,6 +274,7 @@
       padding 0
       background-size 90% 60%
     }
+
   }
   @media screen and (max-width:380px){
     .allRoom_r .room .intro .item .bedType, .allRoom_r .room .intro .item .breakfast, .allRoom_r .room .intro .item .roomPrice {

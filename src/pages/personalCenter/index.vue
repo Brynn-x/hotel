@@ -2,11 +2,12 @@
     <div class="container_s">
       <div class="content">
         <!--背景区-->
-        <div class="personalInfo">
+        <div class="personalInfo" style="background-image: url('./static/img/back.jpg')">
           <div class="background"></div>
           <div class="info">
             <!--头像-->
             <div class="avatar">
+
               <img class="avatarImg" src="../.././assets/img/avatar.jpg" alt="">
             </div>
             <!--网名-->
@@ -90,12 +91,10 @@
     margin 0 auto
     max-width 1080px
     padding 10px 0
-    height 1150px
     .personalInfo
       height 350px
       margin-bottom 10px
       border-radius 5px
-      background-image url("../../assets/img/back2.jpg")
       background-size 100% 100%
       background-repeat no-repeat
       .background
@@ -141,8 +140,8 @@
           font-size 16px
           .btn
             position absolute
-            bottom 8%
-            right 8%
+            bottom 10%
+            right 10%
             color #409eff
             border 1px solid #409eff
     .detail
@@ -156,7 +155,7 @@
         vertical-align top
         margin-left 1%
         margin-bottom 10px
-        height 750px
+        height 100%
         background white
         .myAttention,.forAttention
           .title
@@ -204,19 +203,13 @@
   .container_s .content .personalInfo{
     height 320px
   }
-  .container_s .content{
-    height 1100px
-  }
   .container_s .content .detail .history {
-    height 730px
+    height 750px
   }
 }
 @media screen and (max-width: 1062px) {
   .container_s .content .personalInfo{
     height 290px
-  }
-  .container_s .content{
-    height 1070px
   }
   .container_s .content .detail .history {
     padding 0 35px
@@ -227,9 +220,6 @@
   .container_s .content .detail .history {
     padding 0 25px
   }
-  .container_s .content{
-    height 1020px
-  }
   .container_s .content .detail{
     height 680px
   }
@@ -238,9 +228,6 @@
   }
 }
 @media screen and (max-width: 909px) {
-  .container_s .content{
-    height 940px
-  }
   .container_s .content .detail{
     height 630px
   }
@@ -266,9 +253,6 @@
   }
 }
 @media screen and (max-width: 834px) {
-  .container_s .content{
-    height 930px
-  }
   .container_s .content .personalInfo{
     height 250px
   }
@@ -282,9 +266,6 @@
   }
 }
 @media screen and (max-width:760px) {
-  .container_s .content{
-    height 920px
-  }
   .container_s .content .personalInfo .info .name h3 {
     font-size 23px
   }
@@ -304,9 +285,6 @@
   }
 }
 @media screen and (max-width:690px) {
-  .container_s .content{
-    height 880px
-  }
   .container_s .content .personalInfo{
     height 220px
   }
@@ -316,6 +294,7 @@
   }
   .container_s .content .personalInfo .info .name h3 {
     font-size: 22px
+    margin 5px 0
   }
   .container_s .content .personalInfo .info .name .Signature {
     font-size: 12px
@@ -328,16 +307,10 @@
   }
 }
 @media screen and (max-width:648px) {
-  .container_s .content{
-    height 860px
-  }
   .container_s .content .personalInfo{
-    height 200px
+    height 210px
   }
   .container_s .content .detail .history .myAttention .item .el-col .el-card .el-card__body .hotelName{
-    font-size 12px
-  }
-  .container_s .content .detail .history .forAttention .item .el-col .el-card .el-card__body .hotelName{
     font-size 12px
   }
   .container_s .content .detail .history .myAttention .item .el-col .el-card .el-card__body .smallWord,
@@ -346,9 +319,6 @@
   }
 }
 @media screen and (max-width:561px){
-  .container_s .content{
-    height 740px
-  }
   .container_s .content .personalInfo{
     height 180px
   }
@@ -362,9 +332,6 @@
     padding 4px 2px
     font-size 11px
   }
-  .container_s .content .detail{
-    height 500px
-  }
   .container_s .content .detail .history {
     width 0
     height 0
@@ -372,9 +339,6 @@
   }
 }
 @media screen and (max-width:500px){
-  .container_s .content{
-    height 680px
-  }
   .container_s .content .personalInfo{
     height 160px
   }
@@ -390,21 +354,16 @@
   }
 }
 @media screen and (max-width:430px){
-  .container_s .content{
-    height 600px
-  }
   .el-button--medium {
     font-size 9px
   }
 }
 @media screen and (max-width:400px){
-  .container_s .content{
-    height 570px
-  }
   .container_s .content .personalInfo{
-    height 130px
+    height 150px
   }
   .container_s .content .personalInfo .info .name h3 {
+
     margin 4px 0
   }
   .el-menu-item {
@@ -416,11 +375,8 @@
   }
 }
 @media screen and (max-width:350px){
-  .container_s .content{
-    height 510px
-  }
   .container_s .content .personalInfo{
-    height 110px
+    height 130px
   }
   .container_s .content .personalInfo .info .avatar .avatarImg{
     top -28px
@@ -428,22 +384,19 @@
   }
   .container_s .content .personalInfo .info .name h3 {
     font-size 14px
-    margin 0
+    margin 2px 0
   }
-  li.el-menu-item {
+  .el-menu-item {
     font-size 11px
-    padding 0 8px
+    padding 0 6px
   }
   .el-button--medium {
     font-size 7px
   }
 }
 @media screen and (max-width:290px){
-  .container_s .content{
-    height 440px
-  }
   .container_s .content .personalInfo{
-    height 90px
+    height 110px
   }
   .container_s .content .personalInfo .info .avatar .avatarImg{
     top -22px

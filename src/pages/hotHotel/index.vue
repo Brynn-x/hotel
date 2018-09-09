@@ -26,6 +26,7 @@
       <div class="search">
         <div class="theme">至尊优享</div>
         <!--分界线-->
+
         <div class="line"></div>
         <!--卡片-->
         <my-card></my-card>
@@ -99,6 +100,8 @@
     .hot-hotel
       display inline-block
       vertical-align top
+      box-sizing border-box
+      padding 0 5px
       width 70%
       .title
         margin-bottom 5px

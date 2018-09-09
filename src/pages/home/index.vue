@@ -36,6 +36,7 @@
     <div class="kinds">
       <div class="content">
         <div class="title">酒店选择</div>
+
         <div class="item" v-for="(item, index) in kinds" :key="index" @click="jump">
             <el-row>
               <el-card class="introduce" :body-style="{ padding: '0px' }">
@@ -364,7 +365,7 @@
     font-size 14px
   }
   .container_h .kinds .content .item .introduce .name .intro {
-    padding 4px
+    padding 3px
   }
   .container_h .kinds .content .item{
     margin-right 3.3%
@@ -373,12 +374,13 @@
   }
   .container_h .kinds .content .item:nth-child(n+5){
     width 0
+    height 0
     overflow hidden
   }
 }
 @media screen and (max-width:400px){
   .container_h .pic ,.container_h .pic .el-carousel .el-carousel__container{
-    height 300px
+    height 270px
   }
   .container_h .advantages .content .item , .container_h .steps .content .item {
     margin 0 0 0 6.6%

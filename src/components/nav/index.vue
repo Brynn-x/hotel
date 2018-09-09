@@ -7,7 +7,7 @@
           <img src="../.././assets/img/logo.png" alt="">
         </div>
         <div class="item" v-for="(item, index) in titles" :key="index" :class="{active:index === currentIndex}" @click="light(index)">
-          <router-link :class="{active2:index === currentIndex}" :to="item.path" :key="index">{{item.name}}</router-link>
+          <span><router-link :class="{active2:index === currentIndex}" :to="item.path" :key="index">{{item.name}}</router-link></span>
         </div>
         <div class="search">
           <div class="search-s">
@@ -38,6 +38,15 @@
           if(index !== 3) {
             this.$store.state.currentIndexLight  = index;
           }
+          if( index === 0 ){
+            this.$router.push({path:"/"});
+          }else if( index === 1 ){
+            this.$router.push({path:"/hotHotel"});
+          }else if( index === 2 ){
+            this.$router.push({path:"/cooperateHotel"});
+          }else if( index === 3 ){
+            this.$router.push({path:"/personalCenter"});
+          }
         },
         book: function () {
           this.$router.push({path:"/hotHotel"});
@@ -58,15 +67,14 @@
         }
       },
       created () {
-        if ( localStorage.name  === "123" && localStorage.psd === "123" ) {
-          this.$store.state.loading = true
-        } else {
-          this.$store.state.loading = false
+        console.log(localStorage.name,localStorage.psd );
+        if(localStorage.name !== undefined && localStorage.psd !== undefined) {
+          // 登陆状态不需要弹窗
+          this.$store.state.bulletBox = false;
+          this.$store.state.loading = true;
         }
         this.$router.push({path:"/"})
       },
-      mounted() {
-      }
     }
 </script>
 
@@ -218,20 +226,12 @@
     width 70%
   }
 }
-@media screen and (max-width:400px){
-  .container_p .nav .left .item {
-    font-size 12px
-  }
-}
 @media screen and (max-width:370px){
   .container_p .nav .left{
     width 100%
   }
   .container_p .nav .right{
     width 0
-  }
-  .container_p .nav .left .item {
-    font-size 10px
   }
 }
 </style>

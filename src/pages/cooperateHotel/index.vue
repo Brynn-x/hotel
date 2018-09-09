@@ -63,6 +63,7 @@
               {src:"../.././static/img/logo7.jpg"},
               {src:"../.././static/img/logo8.jpg"},
             ]
+
           }
         },
       methods: {

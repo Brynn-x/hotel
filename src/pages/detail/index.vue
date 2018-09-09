@@ -37,6 +37,7 @@ import myRoom from '@/components/room/index.vue';
       },
       methods: {
         detail: function () {
+
           if (this.$store.state.loading === false) {
               this.$store.state.bulletBox = true;
               this.$store.state.foo = () => {
@@ -63,7 +64,7 @@ import myRoom from '@/components/room/index.vue';
   .content
     margin 0 auto
     max-width 1080px
-    padding 10px 0
+    padding 10px 5px
     .hotel
       height 300px
       font-size 0

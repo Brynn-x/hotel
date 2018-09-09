@@ -163,7 +163,7 @@
         color #8c939d
 @media screen and (max-width:1137px)  {
      .container_s .content .toolbar_s {
-       height 730px
+       height 750px
      }
   }
  @media screen and (max-width:986px) {
@@ -232,7 +232,6 @@
   }
    .container_s .content .toolbar_s {
      width 100%
-     height 540px
    }
   }
   @media screen and (max-width:500px){
@@ -241,9 +240,6 @@
     }
     .toolbar_s .myCollect .item {
       height 16%
-    }
-    .container_s .content .toolbar_s {
-      height 500px
     }
   }
  @media screen and (max-width:430px){
@@ -265,9 +261,6 @@
    .toolbar_s .myCollect .item {
      height 13%
    }
-    .container_s .content .toolbar_s {
-      height 420px
-    }
    .toolbar_s .myBook .item .intro .room {
      font-size: 14px
    }
@@ -303,9 +296,6 @@
   .toolbar_s .myCollect .item {
     height 10%
   }
-  .container_s .content .toolbar_s {
-    height 380px
-  }
   .toolbar_s .myBook .item .intro .room{
     font-size 12px
   }
@@ -319,9 +309,6 @@
 @media screen and (max-width:290px){
   .toolbar_s .myCollect .item {
     height 8%
-  }
-  .container_s .content .toolbar_s {
-    height 330px
   }
 }
 </style>

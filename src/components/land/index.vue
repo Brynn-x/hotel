@@ -15,7 +15,7 @@
           <el-input type="password" v-model="ruleForm2.psd" auto-complete="on">
             <el-button slot="append" icon="el-icon-question" @click="open"></el-button>
           </el-input>
-        </el-form-item> <el-button type="primary" @click="submitForm('ruleForm2')">登陆</el-button>
+        </el-form-item> <el-button type="primary" @click="land">登陆</el-button>
       </el-form>
 
       <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" v-else>
@@ -75,7 +75,7 @@
       };
       var validatePass3 = (rule, value, callback) => {
         if (value === '') {
-          callback(new Error('请输入手机号，手机号码与邮箱至少输入一项'));
+          callback(new Error('请输入正确的手机号!'));
         } else if ( /^1[0-9]{10}$/.test(value)) {
           callback();
         } else {
@@ -119,26 +119,39 @@
         console.log(tab.index);
         this.currentIndex = tab.index + '';
       },
-
-      submitForm(formName) {
+      land() {
         //存储用户名和密码
-        localStorage.setItem("name",this.ruleForm2.name);
-        localStorage.setItem("psd",this.ruleForm2.psd);
-         if(this.ruleForm2.name == "123" && this.ruleForm2.psd == "123") {
-           this.$store.state.bulletBox = false;
-           this.$store.state.loading = true;
-           this.$store.state.foo();
-         }else if(this.ruleForm2.name != "123" || this.ruleForm2.psd != "123") {
-           localStorage.removeItem("name");
-           localStorage.removeItem("psd");
-           alert("您输入的密码不正确")
-         }
-
+        if (this.ruleForm2.name !== "" && this.ruleForm2.psd !== "") {
+          this.$message({
+            showClose: true,
+            message: '欢迎回来！',
+            type: 'success'
+          });
+          this.$store.state.bulletBox = false;
+          this.$store.state.loading = true;
+          localStorage.setItem("name", this.ruleForm2.name);
+          localStorage.setItem("psd", this.ruleForm2.psd);
+          this.$store.state.foo();
+        } else {
+          this.$message.error('账号或密码错误，请重新登录');
+          this.ruleForm2.name = "";
+          this.ruleForm2.psd = ""
+        }
+      },
+      submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-           // alert('submit!');
+            this.$message({
+              showClose: true,
+              message: '欢迎！',
+              type: 'success'
+            });
+            this.$store.state.bulletBox = false;
+            this.$store.state.loading = true;
+            localStorage.setItem("name", this.rules2.name);
+            localStorage.setItem("psd", this.rules2.psd);
+            this.$store.state.foo();
           } else {
-            console.log('error submit!!');
             return false;
           }
         });
@@ -148,17 +161,11 @@
       },
       open() {
         this.$message('忘记密码？请联系管理员');
-      }
+      },
     },
     computed: {
       dialogVisible(){
         return this.$store.state.bulletBox
-      }
-    },
-    created () {
-      if(localStorage.name === '123' && localStorage.psd === '123') {
-        // 登陆状态不需要弹窗
-        this.$store.state.bulletBox = false;
       }
     }
   }

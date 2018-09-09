@@ -119,6 +119,7 @@
   .list_hot .left{
     width 20%
   }
+
   .list_hot .center {
     width 60%
   }

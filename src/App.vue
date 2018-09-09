@@ -6,7 +6,6 @@
     <my-land></my-land>
   </div>
 </template>
-
 <script>
   import myNav from './components/nav/index';
   import myFoot from './components/foot/index';

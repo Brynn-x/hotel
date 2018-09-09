@@ -7,7 +7,6 @@ import myPersonalCenter from '../pages/personalCenter/index.vue'
 import myDetail from '../pages/detail/index.vue'
 
 Vue.use(Router);
-
 export default new Router({
   routes: [
     {

@@ -75,6 +75,7 @@
   .container_f .foot{
     height 140px
   }
+
 }
 @media screen and (max-width:570px){
   .container_f .foot{
