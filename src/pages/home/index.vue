@@ -193,7 +193,7 @@
               font-weight 600
               letter-spacing 10px
             .intro
-              padding 15px 5px 5px 4px
+              padding 15px 5px 5px 5px
               text-align left
               letter-spacing 3px
               .time
