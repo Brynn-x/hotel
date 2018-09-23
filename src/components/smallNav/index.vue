@@ -57,8 +57,8 @@
            show: false,
            currentIndex: '1',
            collect:[
-              {id:"1",title:"Marriott：豪华大床房",src:"../.././static/img/collect.jpg",logo:"Marriott"},
-              {id:"3",title:"悦榕庄：主题单人房",src:"../.././static/img/collect2.jpg",logo:"悦榕庄"},
+              {id:"1",title:"Marriott：豪华大床房",src:"./static/img/collect.jpg",logo:"Marriott"},
+              {id:"3",title:"悦榕庄：主题单人房",src:"./static/img/collect2.jpg",logo:"悦榕庄"},
               ],
            tableData: [{
              name: '文华东方',

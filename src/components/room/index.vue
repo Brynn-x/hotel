@@ -42,11 +42,11 @@
         data () {
             return {
               room:[
-                {name:"普通房",url:"../.././static/img/commonRoom.jpg"},
-                {name:"单人房",url:"../.././static/img/singleRoom.jpg"},
-                {name:"商务大床房",url:"../.././static/img/businessRoom.jpg"},
-                {name:"家庭房",url:"../.././static/img/familyRoom.jpg"},
-                {name:"儿童主题房",url:"../.././static/img/childRoom.jpg"}
+                {name:"普通房",url:"./static/img/commonRoom.jpg"},
+                {name:"单人房",url:"./static/img/singleRoom.jpg"},
+                {name:"商务大床房",url:"./static/img/businessRoom.jpg"},
+                {name:"家庭房",url:"./static/img/familyRoom.jpg"},
+                {name:"儿童主题房",url:"./static/img/childRoom.jpg"}
               ],
               intro:[
                 {bedType:"大床",breakfast:"含早 ",math:"388",bookRoom:"预定"},
@@ -71,17 +71,21 @@
       },
       methods: {
         book(index) {
+          if(this.intro[index].bookRoom === "已预定") {
+            this.intro[index].bookRoom = "预定"
+          } else {
             if(this.$store.state.loading === true) {
               this.intro[index].bookRoom = "已预定"
             }else if(this.$store.state.loading === false) {
               this.$store.state.bulletBox = true;
               this.$store.state.foo =  () => {
-              //"我是预定 登陆成功的回调"
+                //"我是预定 登陆成功的回调"
                 this.$router.push({path:"/detail"});
                 this.intro[index].bookRoom = "已预定"
               }
             }
           }
+        }
      }
     }
 </script>

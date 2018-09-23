@@ -44,24 +44,24 @@
         data () {
           return {
             animateShow:[
-              {src:"../.././static/img/Ritz-Carlton.jpg",brand:"Ritz-Carlton"},
-              {src:"../.././static/img/marriott.jpg",brand:"Marriott"},
-              {src:"../.././static/img/siji.jpg",brand:"四季酒店"},
-              {src:"../.././static/img/wenhuaC.jpg",brand:"文华东方"},
-              {src:"../.././static/img/hilton.jpg",brand:"Hilton"},
-              {src:"../.././static/img/yurong.jpg",brand:"悦榕庄"},
+              {src:"./static/img/Ritz-Carlton.jpg",brand:"Ritz-Carlton"},
+              {src:"./static/img/marriott.jpg",brand:"Marriott"},
+              {src:"./static/img/siji.jpg",brand:"四季酒店"},
+              {src:"./static/img/wenhuaC.jpg",brand:"文华东方"},
+              {src:"./static/img/hilton.jpg",brand:"Hilton"},
+              {src:"./static/img/yurong.jpg",brand:"悦榕庄"},
             ],
             kindFirst:[
-              {src:"../.././static/img/logo1.jpg"},
-              {src:"../.././static/img/logo2.jpg"},
-              {src:"../.././static/img/logo3.jpg"},
-              {src:"../.././static/img/logo4.jpg"},
+              {src:"./static/img/logo1.jpg"},
+              {src:"./static/img/logo2.jpg"},
+              {src:"./static/img/logo3.jpg"},
+              {src:"./static/img/logo4.jpg"},
               ],
             kindSecond:[
-              {src:"../.././static/img/logo5.jpg"},
-              {src:"../.././static/img/logo6.jpg"},
-              {src:"../.././static/img/logo7.jpg"},
-              {src:"../.././static/img/logo8.jpg"},
+              {src:"./static/img/logo5.jpg"},
+              {src:"./static/img/logo6.jpg"},
+              {src:"./static/img/logo7.jpg"},
+              {src:"./static/img/logo8.jpg"},
             ]
 
           }

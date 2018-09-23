@@ -193,13 +193,13 @@
               font-weight 600
               letter-spacing 10px
             .intro
-              padding 5px
+              padding 15px 5px 5px 5px
               text-align left
               letter-spacing 3px
               .time
                 font-size 14px
         .introduce:hover
-          height 280px
+          height 305px
       .item:last-child
         margin-rignt 0
 @media screen and (max-width:1300px){
@@ -209,7 +209,7 @@
 }
 @media screen and (max-width:1100px){
   .container_h .kinds .content .item .introduce:hover {
-    height 300px
+    height 330px
   }
 }
 @media screen and (max-width:1000px){
@@ -218,11 +218,8 @@
   }
 }
 @media screen and (max-width:900px){
-  .container_h .kinds .content .item .introduce{
-    height 280px
-  }
-  .container_h .kinds .content .item .introduce:hover {
-    height 280px
+  .container_h .kinds .content .item .introduce,.container_h .kinds .content .item .introduce:hover {
+    height 295px
   }
   .container_h .advantages .content .item .name, .container_h .steps .content .item .name {
     padding: 70px 0 10px 0
@@ -258,10 +255,7 @@
   .container_h .kinds{
     height 420px
   }
-  .container_h .kinds .content .item .introduce{
-    height 270px
-  }
-  .container_h .kinds .content .item .introduce:hover{
+  .container_h .kinds .content .item .introduce,.container_h .kinds .content .item .introduce:hover {
     height 270px
   }
   .container_h .kinds .content .item .introduce .image {
@@ -300,10 +294,7 @@
   .container_h .kinds .content {
     padding 40px 0
   }
-  .container_h .kinds .content .item .introduce {
-    height 250px
-  }
-  .container_h .kinds .content .item .introduce:hover {
+  .container_h .kinds .content .item .introduce,.container_h .kinds .content .item .introduce:hover {
     height 250px
   }
   .container_h .kinds .content .item .introduce .image {
@@ -322,10 +313,7 @@
   .container_h .kinds .content .item .introduce .name .nameDetail{
     font-size 15px
   }
-  .container_h .kinds .content .item .introduce {
-    height 240px
-  }
-  .container_h .kinds .content .item .introduce:hover {
+  .container_h .kinds .content .item .introduce,.container_h .kinds .content .item .introduce:hover {
     height 240px
   }
 }
@@ -352,11 +340,8 @@
   .container_h .kinds {
     height 360px
   }
-  .container_h .kinds .content .item .introduce {
-    height 220px
-  }
-  .container_h .kinds .content .item .introduce:hover {
-    height 220px
+  .container_h .kinds .content .item .introduce,.container_h .kinds .content .item .introduce:hover {
+    height 235px
   }
   .container_h .kinds .content .item .introduce .image {
     height 80px

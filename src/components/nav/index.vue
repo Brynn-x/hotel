@@ -81,7 +81,7 @@
 <style lang="stylus">
 .container_p
   position fixed
-  z-index 99999
+  z-index 3
   width 100%
   font-size 0
   height 50px

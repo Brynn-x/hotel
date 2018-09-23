@@ -3,7 +3,7 @@
       <div class="content">
         <!--酒店介绍-->
         <div class="hotel">
-          <div class="pic"></div>
+          <div class="pic" style="background-image: url('./static/img/wenhua.jpg')"></div>
           <div class="introduce">
             <div class="name">
               文华东方
@@ -37,20 +37,21 @@ import myRoom from '@/components/room/index.vue';
       },
       methods: {
         detail: function () {
-
-          if (this.$store.state.loading === false) {
+          if (this.atten === "已关注") {
+            this.atten = '关注'
+          } else {
+            if (this.$store.state.loading === false) {
               this.$store.state.bulletBox = true;
               this.$store.state.foo = () => {
-                this.$router.push({path:"/detail"});
+                this.$router.push({path: "/detail"});
                 this.atten = '已关注'
               }
-
             } else if (this.$store.state.loading === true) {
               this.atten = "已关注"
             }
-
           }
-        },
+        }
+      },
       components: {
         myRoom
       }
@@ -71,17 +72,19 @@ import myRoom from '@/components/room/index.vue';
       margin-bottom 10px
       border-radius 5px
       border 1px solid #ddd
+      overflow hidden
       .pic
         width 30%
         display inline-block
         text-align center
         height 100%
-        background-image url("../../assets/img/wenhua.jpg")
         background-size 80% 80%
         background-position 50% 50%
         background-repeat no-repeat
       .introduce
         width 70%
+        box-sizing border-box
+        padding 0 5px
         height 300px
         display inline-block
         vertical-align top
@@ -217,6 +220,13 @@ import myRoom from '@/components/room/index.vue';
   .container_d .content .hotel .introduce .background{
     height 68px
   }
-
+}
+@media screen and (max-width:400px){
+  .container_d .content .hotel,.container_d .content .hotel .introduce {
+    height 170px
+  }
+  .container_d .content .hotel .introduce .name {
+    margin-top 14px
+  }
 }
 </style>
